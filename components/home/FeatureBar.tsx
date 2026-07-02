@@ -25,7 +25,7 @@ const features = [
 
 export default function FeatureBar() {
   return (
-    <section className="relative z-40 -mt-7 w-full px-6 lg:px-8">
+    <section className="relative z-40 -mt-8 w-full px-6 lg:px-8">
       <div
         className="
           overflow-hidden
@@ -39,15 +39,17 @@ export default function FeatureBar() {
         "
       >
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
+
           {features.map((item, index) => (
+
             <div
               key={index}
               className={`
                 group
                 flex
                 items-center
-                gap-4
-                px-8
+                gap-3
+                px-6
                 py-5
                 transition-all
                 duration-300
@@ -59,33 +61,36 @@ export default function FeatureBar() {
                 }
               `}
             >
+
               <Image
                 src={item.icon}
                 alt={item.title}
-                width={68}
-                height={68}
+                width={89}
+                height={89}
                 className="
-                  h-auto
-                  w-auto
                   shrink-0
                   transition-all
                   duration-300
                   group-hover:scale-110
-                  drop-shadow-[0_0_10px_rgba(34,197,94,.35)]
                 "
               />
 
               <div>
-                <h3 className="text-lg font-bold uppercase tracking-wide text-white">
+
+                <h3 className="text-base font-bold uppercase tracking-wide text-white">
                   {item.title}
                 </h3>
 
-                <p className="mt-1 whitespace-pre-line text-sm leading-6 text-green-100">
+                <p className="mt-1 whitespace-pre-line text-sm leading-5 text-green-100">
                   {item.desc}
                 </p>
+
               </div>
+
             </div>
+
           ))}
+
         </div>
       </div>
     </section>
