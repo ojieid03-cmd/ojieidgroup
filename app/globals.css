@@ -1,0 +1,376 @@
+@import "tailwindcss";
+
+/* ==========================================
+   OJIEID GROUP V2 DESIGN SYSTEM
+========================================== */
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+
+  --primary: #16a34a;
+  --primary-dark: #15803d;
+
+  --secondary: #0f172a;
+
+  --accent: #22c55e;
+
+  --gold: #facc15;
+
+  --border: #e2e8f0;
+
+  --muted: #64748b;
+
+  --card: rgba(255, 255, 255, 0.75);
+
+  --glass: rgba(255, 255, 255, 0.08);
+}
+
+.dark {
+  --background: #08111d;
+
+  --foreground: #ffffff;
+
+  --border: rgba(255,255,255,.08);
+
+  --card: rgba(15,23,42,.75);
+
+  --glass: rgba(255,255,255,.05);
+}
+
+/* ==========================================
+   BASE
+========================================== */
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+
+  background:var(--background);
+
+  color:var(--foreground);
+
+  text-rendering:optimizeLegibility;
+
+  -webkit-font-smoothing:antialiased;
+
+  overflow-x:hidden;
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+  width:10px;
+}
+
+::-webkit-scrollbar-track{
+  background:#e2e8f0;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#16a34a;
+  border-radius:999px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:#15803d;
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+  background:#16a34a;
+
+  color:white;
+
+}
+
+/* ==========================================
+   CONTAINER
+========================================== */
+
+.container-premium{
+
+  max-width:1280px;
+
+  margin:auto;
+
+  padding-left:24px;
+
+  padding-right:24px;
+
+}
+
+/* ==========================================
+   SECTION
+========================================== */
+
+.section{
+
+  padding-top:120px;
+
+  padding-bottom:120px;
+
+}
+
+/* ==========================================
+   CARD
+========================================== */
+
+.card-premium{
+
+  background:var(--card);
+
+  border:1px solid var(--border);
+
+  border-radius:24px;
+
+  box-shadow:
+  0 15px 40px rgba(15,23,42,.08);
+
+  transition:.35s;
+
+}
+
+.card-premium:hover{
+
+  transform:translateY(-6px);
+
+}
+
+/* ==========================================
+   GLASS
+========================================== */
+
+.glass{
+
+  background:var(--glass);
+
+  backdrop-filter:blur(18px);
+
+  -webkit-backdrop-filter:blur(18px);
+
+  border:1px solid rgba(255,255,255,.08);
+
+  border-radius:24px;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.btn-primary{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:.5rem;
+
+  padding:16px 34px;
+
+  border-radius:16px;
+
+  background:#16a34a;
+
+  color:white;
+
+  font-weight:700;
+
+  transition:.3s;
+
+}
+
+.btn-primary:hover{
+
+  transform:translateY(-3px);
+
+  background:#15803d;
+
+}
+
+.btn-outline{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  justify-content:center;
+
+  gap:.5rem;
+
+  padding:16px 34px;
+
+  border-radius:16px;
+
+  border:1px solid rgba(255,255,255,.25);
+
+  color:white;
+
+  backdrop-filter:blur(14px);
+
+  transition:.3s;
+
+}
+
+.btn-outline:hover{
+
+  background:white;
+
+  color:#111827;
+
+}
+
+/* ==========================================
+   TITLE
+========================================== */
+
+.title-xl{
+
+  font-size:clamp(2.8rem,6vw,5.5rem);
+
+  line-height:1.1;
+
+  font-weight:800;
+
+}
+
+.title-lg{
+
+  font-size:clamp(2rem,5vw,4rem);
+
+  font-weight:800;
+
+}
+
+.subtitle{
+
+  font-size:1.15rem;
+
+  color:#94a3b8;
+
+  line-height:1.9;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.badge{
+
+  display:inline-flex;
+
+  align-items:center;
+
+  gap:.5rem;
+
+  padding:10px 18px;
+
+  border-radius:999px;
+
+  background:rgba(22,163,74,.08);
+
+  color:#16a34a;
+
+  font-weight:700;
+
+}
+
+/* ==========================================
+   ANIMATION
+========================================== */
+
+.fade-up{
+
+  animation:fadeUp .7s ease;
+
+}
+
+@keyframes fadeUp{
+
+  from{
+
+    opacity:0;
+
+    transform:translateY(40px);
+
+  }
+
+  to{
+
+    opacity:1;
+
+    transform:none;
+
+  }
+
+}
+
+/* ==========================================
+   IMAGE
+========================================== */
+
+img{
+
+  user-select:none;
+
+}
+
+/* ==========================================
+   LINK
+========================================== */
+
+a{
+
+  transition:.3s;
+
+}
+
+/* ==========================================
+   HERO OVERLAY
+========================================== */
+
+.hero-overlay{
+
+background:linear-gradient(
+90deg,
+rgba(0,0,0,.80),
+rgba(0,0,0,.55),
+rgba(0,0,0,.25)
+);
+
+}
+
+/* ==========================================
+   PREMIUM SHADOW
+========================================== */
+
+.shadow-premium{
+
+box-shadow:
+
+0 15px 40px rgba(0,0,0,.18);
+
+}
+
+/* ==========================================
+   BORDER
+========================================== */
+
+.border-premium{
+
+border:1px solid rgba(255,255,255,.08);
+
+}
