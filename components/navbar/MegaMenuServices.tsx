@@ -51,13 +51,10 @@ export default function MegaMenuServices() {
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4">
-
             {serviceMenu.map((item) => {
-
               const Icon = item.icon;
 
               return (
-
                 <Link
                   key={item.title}
                   href={item.href}
@@ -76,7 +73,6 @@ export default function MegaMenuServices() {
                     hover:bg-green-50
                   "
                 >
-
                   <div
                     className="
                       flex
@@ -120,23 +116,21 @@ export default function MegaMenuServices() {
                   />
 
                 </Link>
-
               );
-
             })}
-
           </div>
 
         </div>
 
         {/* ================= RIGHT ================= */}
 
-        <div className="relative overflow-hidden rounded-r-3xl">
+        <div className="relative min-h-[620px] overflow-hidden rounded-r-3xl">
 
           <Image
             src="/images/menu-service.jpg"
             alt="Service"
             fill
+            sizes="360px"
             className="object-cover"
           />
 
@@ -182,9 +176,7 @@ export default function MegaMenuServices() {
               "
             >
               Explore Services
-
               <ArrowRight size={18} />
-
             </Link>
 
           </div>

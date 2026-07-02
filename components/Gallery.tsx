@@ -23,21 +23,52 @@ export default function Gallery() {
           {projects.map((project) => (
             <div
               key={project.title}
-              className="overflow-hidden rounded-3xl bg-white shadow-lg dark:bg-gray-800"
+              className="
+                group
+                overflow-hidden
+                rounded-3xl
+                bg-white
+                shadow-xl
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:shadow-2xl
+                dark:bg-gray-800
+              "
             >
 
-              {/* IMAGE FIX */}
-              <div className="relative h-64 w-full">
+              {/* IMAGE */}
+              <div className="relative h-64 overflow-hidden">
+
                 <Image
                   src={project.image}
                   alt={project.title}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 100vw, 33vw"
+                  sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
+                  className="
+                    object-cover
+                    transition-all
+                    duration-700
+                    group-hover:scale-110
+                  "
                 />
+
+                {/* Overlay */}
+                <div
+                  className="
+                    absolute
+                    inset-0
+                    bg-black/0
+                    transition-all
+                    duration-500
+                    group-hover:bg-black/25
+                  "
+                />
+
               </div>
 
               <div className="p-6">
+
                 <h3 className="text-2xl font-bold text-green-700">
                   {project.title}
                 </h3>
@@ -45,12 +76,14 @@ export default function Gallery() {
                 <p className="mt-3 text-gray-600 dark:text-gray-300">
                   Dokumentasi hasil pekerjaan OJIEID GROUP SEJAHTERA.
                 </p>
+
               </div>
 
             </div>
           ))}
 
         </div>
+
       </div>
     </section>
   );

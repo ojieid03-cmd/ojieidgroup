@@ -39,7 +39,6 @@ export default function FeatureBar() {
         "
       >
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
-
           {features.map((item, index) => (
             <div
               key={index}
@@ -66,6 +65,8 @@ export default function FeatureBar() {
                 width={68}
                 height={68}
                 className="
+                  h-auto
+                  w-auto
                   shrink-0
                   transition-all
                   duration-300
@@ -75,7 +76,6 @@ export default function FeatureBar() {
               />
 
               <div>
-
                 <h3 className="text-lg font-bold uppercase tracking-wide text-white">
                   {item.title}
                 </h3>
@@ -83,12 +83,9 @@ export default function FeatureBar() {
                 <p className="mt-1 whitespace-pre-line text-sm leading-6 text-green-100">
                   {item.desc}
                 </p>
-
               </div>
-
             </div>
           ))}
-
         </div>
       </div>
     </section>

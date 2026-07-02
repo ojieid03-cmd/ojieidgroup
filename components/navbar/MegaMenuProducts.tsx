@@ -47,7 +47,7 @@ export default function MegaMenuProducts() {
           <p className="mt-3 max-w-2xl text-gray-500">
             Kami menyediakan berbagai solusi LED Display, Videotron,
             Digital Signage dan perangkat pendukung untuk kebutuhan
-            bisnis, pemerintahan, pendidikan dan industri.
+            bisnis, pemerintahan dan industri.
           </p>
 
           <div className="mt-8 grid grid-cols-2 gap-4">
@@ -119,11 +119,13 @@ export default function MegaMenuProducts() {
 
         {/* ================= RIGHT ================= */}
 
-        <div className="relative overflow-hidden rounded-r-3xl">
+        <div className="relative min-h-[620px] overflow-hidden rounded-r-3xl">
+
           <Image
             src="/images/menu-product.jpg"
             alt="LED Display"
             fill
+            sizes="360px"
             className="object-cover"
           />
 
@@ -170,6 +172,7 @@ export default function MegaMenuProducts() {
             </Link>
 
           </div>
+
         </div>
 
       </div>
