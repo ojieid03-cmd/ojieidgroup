@@ -41,22 +41,22 @@ export const mainMenu = [
 export const productMenu = [
   {
     title: "Indoor LED Display",
-    href: "/produk",
+    href: "/produk/videotron-indoor",
     icon: MonitorSmartphone,
   },
   {
     title: "Outdoor LED Display",
-    href: "/produk",
+    href: "/produk/videotron-outdoor",
     icon: Tv,
   },
   {
     title: "Digital Signage",
-    href: "/produk",
+    href: "/produk/digital-signage",
     icon: PanelTop,
   },
   {
     title: "Running Text",
-    href: "/produk",
+    href: "/produk/running-text",
     icon: RadioTower,
   },
 ];
