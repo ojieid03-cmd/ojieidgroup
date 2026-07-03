@@ -4,10 +4,10 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, Phone } from "lucide-react";
+import MobileTopMenu from "./MobileTopMenu";
 import { BASE_PATH } from "@/lib/basePath";
 
 import DesktopMenu from "./DesktopMenu";
-import MobileMenu from "./MobileMenu";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -19,9 +19,7 @@ export default function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   return (
@@ -41,43 +39,49 @@ export default function Navbar() {
         }
       `}
     >
-      <div className="mx-auto flex h-[92px] w-full max-w-[1800px] items-center justify-between px-6 lg:px-10">
-
+      <div
+        className="
+          mx-auto
+          flex
+          w-full
+          max-w-[1800px]
+          flex-col
+          items-center
+          gap-3
+          px-4
+          py-3
+          lg:h-[92px]
+          lg:flex-row
+          lg:justify-between
+          lg:gap-6
+          lg:px-10
+        "
+      >
         {/* ================= LOGO ================= */}
 
         <Link
           href="/"
-          className="flex items-center gap-4"
+          className="flex items-center justify-center gap-3 lg:justify-start"
         >
           <Image
-  src={`${BASE_PATH}/logo/logo.png`}
-  alt="OJIEID GROUP"
-  width={68}
-  height={68}
-  priority
-  className="h-16 w-auto"
-/>
+            src={`${BASE_PATH}/logo/logo.png`}
+            alt="OJIEID GROUP"
+            width={60}
+            height={60}
+            priority
+            className="h-14 w-auto lg:h-16"
+          />
 
           <div>
-
-            <h1 className="text-[30px] font-black leading-none">
-
-              <span className="text-green-600">
-                OJIEID
-              </span>
-
-              <span className="text-gray-900">
-                {" "}GROUP
-              </span>
-
+            <h1 className="text-2xl font-black leading-none lg:text-[30px]">
+              <span className="text-green-600">OJIEID</span>
+              <span className="text-gray-900"> GROUP</span>
             </h1>
 
-            <p className="mt-1 text-[11px] uppercase tracking-[4px] text-gray-500">
+            <p className="mt-1 text-[10px] uppercase tracking-[3px] text-gray-500 lg:text-[11px]">
               Smart Digital Technology
             </p>
-
           </div>
-
         </Link>
 
         {/* ================= MENU ================= */}
@@ -86,13 +90,12 @@ export default function Navbar() {
 
         {/* ================= RIGHT ================= */}
 
-        <div className="hidden xl:flex items-center gap-4">
-
+        <div className="hidden lg:flex items-center gap-4">
           <button
             className="
               flex
-              h-12
-              w-12
+              h-11
+              w-11
               items-center
               justify-center
               rounded-xl
@@ -117,8 +120,8 @@ export default function Navbar() {
               gap-2
               rounded-xl
               bg-green-600
-              px-7
-              py-3.5
+              px-6
+              py-3
               font-semibold
               text-white
               transition-all
@@ -128,18 +131,14 @@ export default function Navbar() {
             "
           >
             <Phone size={18} />
-
             REQUEST QUOTE
-
           </Link>
-
         </div>
+      ...
+</div>
 
-        {/* ================= MOBILE ================= */}
+<MobileTopMenu />
 
-        <MobileMenu />
-
-      </div>
-    </header>
+</header>
   );
 }

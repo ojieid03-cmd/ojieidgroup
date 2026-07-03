@@ -12,7 +12,13 @@ export default function DesktopMenu() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden xl:flex items-center">
+    <nav
+  className="
+    hidden
+    xl:flex
+    items-center
+  "
+>
 
       {mainMenu.map((item) => {
 
@@ -33,9 +39,9 @@ export default function DesktopMenu() {
                   flex
                   items-center
                   gap-1
-                  px-5
-                  py-9
-                  text-[15px]
+                  px-2 lg:px-5
+py-4 lg:py-9
+text-[13px] lg:text-[15px]
                   font-semibold
                   text-gray-800
                   transition-all
@@ -73,9 +79,9 @@ export default function DesktopMenu() {
                   flex
                   items-center
                   gap-1
-                  px-5
-                  py-9
-                  text-[15px]
+                  px-2 lg:px-5
+py-4 lg:py-9
+text-[13px] lg:text-[15px]
                   font-semibold
                   text-gray-800
                   transition-all
@@ -108,9 +114,9 @@ export default function DesktopMenu() {
             href={item.href}
             className={`
               relative
-              px-5
-              py-9
-              text-[15px]
+              px-2 lg:px-5
+py-4 lg:py-9
+text-[13px] lg:text-[15px]
               font-semibold
               transition-all
               duration-300
@@ -126,8 +132,8 @@ export default function DesktopMenu() {
             <span
               className={`
                 absolute
-                bottom-7
-                left-5
+                bottom-2 lg:bottom-7
+left-2 lg:left-5
                 h-[2px]
                 rounded-full
                 bg-green-600
