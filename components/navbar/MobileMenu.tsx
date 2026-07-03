@@ -2,8 +2,20 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronRight, ArrowLeft } from "lucide-react";
-import { mainMenu, productMenu, serviceMenu } from "./menu";
+
+import {
+  Menu,
+  X,
+  ChevronRight,
+  ArrowLeft,
+  Phone,
+} from "lucide-react";
+
+import {
+  mainMenu,
+  productMenu,
+  serviceMenu,
+} from "./menu";
 
 type View = "main" | "products" | "services";
 
@@ -51,10 +63,20 @@ export default function MobileMenu() {
         }`}
       >
         {/* HEADER */}
-        <div className="flex items-center justify-between border-b px-6 py-5">
-
+        <div
+  className="
+    flex
+    items-center
+    justify-between
+    border-b
+    bg-green-600
+    px-6
+    py-5
+    text-white
+  "
+>
           {view === "main" ? (
-            <h2 className="text-xl font-bold text-green-600">
+            <h2 className="text-xl font-bold">
               OJIEID GROUP
             </h2>
           ) : (
@@ -67,7 +89,10 @@ export default function MobileMenu() {
             </button>
           )}
 
-          <button onClick={() => setOpen(false)}>
+          <button
+  onClick={() => setOpen(false)}
+  className="rounded-lg p-1 hover:bg-white/20"
+>
             <X size={28} />
           </button>
 
@@ -75,7 +100,7 @@ export default function MobileMenu() {
 
         {/* MAIN MENU */}
         {view === "main" && (
-          <div className="py-2">
+          <div className="flex h-[calc(100vh-80px)] flex-col">
 
             {mainMenu.map((item) => {
 
@@ -110,7 +135,16 @@ export default function MobileMenu() {
                   key={item.title}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="block px-6 py-4 font-semibold hover:bg-gray-100"
+                  className="
+block
+border-b
+px-6
+py-5
+font-semibold
+transition
+hover:bg-green-50
+hover:text-green-600
+"
                 >
                   {item.title}
                 </Link>
@@ -121,48 +155,139 @@ export default function MobileMenu() {
         )}
 
         {/* PRODUCT PAGE */}
-        {view === "products" && (
-          <div className="py-2">
+{view === "products" && (
+  <div className="flex h-full flex-col">
 
-            <h3 className="px-6 py-3 text-lg font-bold text-green-600">
-              Produk
-            </h3>
+    <h3 className="border-b px-6 py-5 text-xl font-bold text-green-600">
+      Produk
+    </h3>
 
-            {productMenu.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block px-6 py-4 hover:bg-gray-100"
-              >
-                {item.title}
-              </Link>
-            ))}
+    <div className="flex-1 overflow-y-auto">
 
-          </div>
-        )}
+      {productMenu.map((item) => (
 
+        <Link
+          key={item.title}
+          href={item.href}
+          onClick={() => setOpen(false)}
+          className="
+            flex
+            items-center
+            justify-between
+            border-b
+            px-6
+            py-4
+            font-medium
+            transition
+            hover:bg-green-50
+            hover:text-green-600
+          "
+        >
+          <span>{item.title}</span>
+
+          <ChevronRight size={18} />
+
+        </Link>
+
+      ))}
+
+    </div>
+
+    <div className="border-t p-6">
+
+      <Link
+        href="/penawaran"
+        onClick={() => setOpen(false)}
+        className="
+          flex
+          items-center
+          justify-center
+          gap-2
+          rounded-xl
+          bg-green-600
+          px-5
+          py-3
+          font-semibold
+          text-white
+          transition
+          hover:bg-green-700
+        "
+      >
+        <Phone size={18} />
+        REQUEST QUOTE
+      </Link>
+
+    </div>
+
+  </div>
+)}
         {/* SERVICE PAGE */}
-        {view === "services" && (
-          <div className="py-2">
+{view === "services" && (
+  <div className="flex h-full flex-col">
 
-            <h3 className="px-6 py-3 text-lg font-bold text-green-600">
-              Services
-            </h3>
+    <h3 className="border-b px-6 py-5 text-xl font-bold text-green-600">
+      Services
+    </h3>
 
-            {serviceMenu.map((item) => (
-              <Link
-                key={item.title}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className="block px-6 py-4 hover:bg-gray-100"
-              >
-                {item.title}
-              </Link>
-            ))}
+    <div className="flex-1 overflow-y-auto">
 
-          </div>
-        )}
+      {serviceMenu.map((item) => (
+
+        <Link
+          key={item.title}
+          href={item.href}
+          onClick={() => setOpen(false)}
+          className="
+            flex
+            items-center
+            justify-between
+            border-b
+            px-6
+            py-4
+            font-medium
+            transition
+            hover:bg-green-50
+            hover:text-green-600
+          "
+        >
+          <span>{item.title}</span>
+
+          <ChevronRight size={18} />
+
+        </Link>
+
+      ))}
+
+    </div>
+
+    <div className="border-t p-6">
+
+      <Link
+        href="/penawaran"
+        onClick={() => setOpen(false)}
+        className="
+          flex
+          items-center
+          justify-center
+          gap-2
+          rounded-xl
+          bg-green-600
+          px-5
+          py-3
+          font-semibold
+          text-white
+          transition
+          hover:bg-green-700
+        "
+      >
+        <Phone size={18} />
+        REQUEST QUOTE
+      </Link>
+
+    </div>
+
+  </div>
+)}
 
       </aside>
     </>
