@@ -74,6 +74,11 @@ const totalCabinet = cabinetHorizontal * cabinetVertical;
 
 const modulePerCabinet = c.moduleX * c.moduleY;
 const totalModule = totalCabinet * modulePerCabinet;
+const realWidth = cabinetHorizontal * c.width;
+const realHeight = cabinetVertical * c.height;
+
+const sisaWidth = realWidth - width;
+const sisaHeight = realHeight - height;
 
 // Pixel Pitch
 const pitchValue = Number(pitch.replace("P", ""));
@@ -93,6 +98,13 @@ setHasil({
   totalCabinet,
   modulePerCabinet,
   totalModule,
+  moduleSize: c.moduleSize,
+
+  realWidth,
+  realHeight,
+  sisaWidth,
+  sisaHeight,
+
   daya,
 });
 };
@@ -305,7 +317,6 @@ setHasil({
     Total modul dalam satu cabinet.
   </p>
 </div>
-
 <div className="rounded-2xl bg-white p-6 shadow">
   <p className="text-gray-500">
     Total Modul LED
@@ -317,6 +328,34 @@ setHasil({
 
   <p className="mt-2 text-sm text-gray-500">
     Jumlah keseluruhan modul LED.
+  </p>
+</div>
+
+<div className="rounded-2xl bg-white p-6 shadow">
+  <p className="text-gray-500">
+    Ukuran Real Display
+  </p>
+
+  <h4 className="mt-2 text-3xl font-bold text-green-700">
+    {hasil.realWidth.toFixed(2)} × {hasil.realHeight.toFixed(2)} m
+  </h4>
+
+  <p className="mt-2 text-sm text-gray-500">
+    Ukuran sebenarnya setelah disesuaikan dengan jumlah cabinet.
+  </p>
+</div>
+
+<div className="rounded-2xl bg-white p-6 shadow">
+  <p className="text-gray-500">
+    Penambahan Ukuran
+  </p>
+
+  <h4 className="mt-2 text-3xl font-bold text-green-700">
+    +{hasil.sisaWidth.toFixed(2)} m × +{hasil.sisaHeight.toFixed(2)} m
+  </h4>
+
+  <p className="mt-2 text-sm text-gray-500">
+    Penambahan ukuran agar display dapat tersusun penuh menggunakan cabinet.
   </p>
 </div>
 
