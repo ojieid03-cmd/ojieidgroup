@@ -36,9 +36,8 @@ export default function VideotronOutdoorPage() {
     <span className="text-gray-400">
       /
     </span>
-
     <span className="font-semibold text-green-700">
-    Videotron Outdoor
+    Videotron outdoor
     </span>
 
   </div>
@@ -332,8 +331,9 @@ promosi berskala besar.
     </h2>
 
     <p className="mx-auto mt-6 max-w-3xl text-lg text-green-100">
-      Tim OJIEID GROUP siap membantu mulai dari konsultasi,
-      desain, pengadaan, instalasi hingga maintenance.
+      Tim OJIEID GROUP siap membantu kebutuhan Outdoor LED Display,
+mulai dari survey lokasi, desain konstruksi, instalasi,
+commissioning hingga layanan maintenance profesional.
     </p>
 
     <div className="mt-10 flex flex-col justify-center gap-4 sm:flex-row">
@@ -384,14 +384,19 @@ promosi berskala besar.
     <div className="mt-14 space-y-4">
 
       {[
-        {
-          q: "Apa itu Videotron Outdoor?",
-          a: "Videotron Outdoor adalah layar LED digital dengan kualitas gambar tinggi yang digunakan di dalam ruangan seperti mall, hotel, ruang meeting, auditorium, gereja, masjid, showroom, dan command center."
-        },
-        {
-          q: "Apakah tersedia jasa instalasi?",
-          a: "Ya. OJIEID GROUP menyediakan instalasi profesional di seluruh Indonesia beserta konfigurasi dan testing."
-        },
+      {
+  q: "Apa itu Videotron Outdoor?",
+  a: `Videotron Outdoor adalah layar LED digital dengan tingkat
+kecerahan tinggi yang dirancang khusus untuk penggunaan
+di luar ruangan. Cocok digunakan untuk billboard digital,
+reklame, stadion, pusat kota, dan media informasi publik.`
+},
+{
+  q: "Apakah tersedia jasa instalasi?",
+  a: `Ya. Kami menyediakan jasa instalasi Outdoor LED Display
+lengkap mulai dari pondasi, rangka besi, pemasangan panel,
+hingga konfigurasi sistem.`
+},
         {
           q: "Apakah ada garansi?",
           a: "Semua produk mendapatkan garansi resmi sesuai tipe produk serta dukungan after sales."
@@ -470,34 +475,34 @@ promosi berskala besar.
 
     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
-      {/* Outdoor */}
+    {/* Indoor */}
 
-      <Link
-        href="/produk/videotron-outdoor"
-        className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
-      >
+<Link
+  href="/produk/videotron-indoor"
+  className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+>
 
-        <Image
-          src="/produk/videotron-outdoor.jpg"
-          alt="Videotron Outdoor"
-          width={500}
-          height={350}
-          className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
-        />
+  <Image
+    src="/produk/videotron-indoor.jpg"
+    alt="Videotron Indoor"
+    width={500}
+    height={350}
+    className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
+  />
 
-        <div className="p-6">
+  <div className="p-6">
 
-          <h3 className="text-xl font-bold text-gray-900">
-            Videotron Outdoor
-          </h3>
+    <h3 className="text-xl font-bold text-gray-900">
+      Videotron Indoor
+    </h3>
 
-          <p className="mt-3 text-gray-600">
-            LED Display outdoor dengan brightness tinggi untuk billboard digital.
-          </p>
+    <p className="mt-3 text-gray-600">
+      LED Display berkualitas tinggi untuk meeting room, auditorium, showroom dan berbagai kebutuhan indoor.
+    </p>
 
-        </div>
+  </div>
 
-      </Link>
+</Link>
 
       {/* Running Text */}
 
