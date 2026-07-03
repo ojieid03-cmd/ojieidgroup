@@ -24,6 +24,12 @@ export const mainMenu = [
     href: "#",
     mega: "services",
   },
+
+  {
+    title: "KALKULATOR LED",
+    href: "/kalkulator-led",
+  },
+
   {
     title: "GALLERY",
     href: "/galeri",
