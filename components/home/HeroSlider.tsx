@@ -2,11 +2,13 @@
 
 import { useEffect, useState } from "react";
 
+import { BASE_PATH } from "@/lib/basePath";
+
 const slides = [
-  "/images/hero/hero-new1-v2.png",
-  "/images/hero/hero-new2-v2.png",
-  "/images/hero/hero-new3-v2.png",
-  "/images/hero/hero-new4-v2.png",
+  `${BASE_PATH}/images/hero/hero-new1-v2.png`,
+  `${BASE_PATH}/images/hero/hero-new2-v2.png`,
+  `${BASE_PATH}/images/hero/hero-new3-v2.png`,
+  `${BASE_PATH}/images/hero/hero-new4-v2.png`,
 ];
 
 export default function HeroSlider() {

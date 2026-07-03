@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Search, Phone } from "lucide-react";
+import { BASE_PATH } from "@/lib/basePath";
 
 import DesktopMenu from "./DesktopMenu";
 import MobileMenu from "./MobileMenu";
@@ -49,13 +50,13 @@ export default function Navbar() {
           className="flex items-center gap-4"
         >
           <Image
-            src="/logo/logo.png"
-            alt="OJIEID GROUP"
-            width={68}
-            height={68}
-            priority
-            className="h-16 w-auto"
-          />
+  src={`${BASE_PATH}/logo/logo.png`}
+  alt="OJIEID GROUP"
+  width={68}
+  height={68}
+  priority
+  className="h-16 w-auto"
+/>
 
           <div>
 

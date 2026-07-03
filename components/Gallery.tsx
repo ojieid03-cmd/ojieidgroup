@@ -1,14 +1,33 @@
 import Image from "next/image";
+import { BASE_PATH } from "@/lib/basePath";
 
 export default function Gallery() {
   const projects = [
-    { title: "Videotron Indoor", image: "/gallery/project1.jpg" },
-    { title: "Videotron Outdoor", image: "/gallery/project2.jpg" },
-    { title: "Running Text", image: "/gallery/project3.jpg" },
-    { title: "LED Display Event", image: "/gallery/project4.jpg" },
-    { title: "WiFi & Networking", image: "/gallery/project5.jpg" },
-    { title: "Maintenance", image: "/gallery/project6.jpg" },
-  ];
+  {
+    title: "Videotron Indoor",
+    image: `${BASE_PATH}/gallery/project1.jpg`,
+  },
+  {
+    title: "Videotron Outdoor",
+    image: `${BASE_PATH}/gallery/project2.jpg`,
+  },
+  {
+    title: "Running Text",
+    image: `${BASE_PATH}/gallery/project3.jpg`,
+  },
+  {
+    title: "LED Display Event",
+    image: `${BASE_PATH}/gallery/project4.jpg`,
+  },
+  {
+    title: "WiFi & Networking",
+    image: `${BASE_PATH}/gallery/project5.jpg`,
+  },
+  {
+    title: "Maintenance",
+    image: `${BASE_PATH}/gallery/project6.jpg`,
+  },
+];
 
   return (
     <section className="bg-white py-24 dark:bg-gray-900">

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { BASE_PATH } from "@/lib/basePath";
 import { serviceMenu } from "./menu";
 
 export default function MegaMenuServices() {
@@ -127,12 +128,12 @@ export default function MegaMenuServices() {
         <div className="relative min-h-[620px] overflow-hidden rounded-r-3xl">
 
           <Image
-            src="/images/menu-service.jpg"
-            alt="Service"
-            fill
-            sizes="360px"
-            className="object-cover"
-          />
+  src={`${BASE_PATH}/images/menu-service.jpg`}
+  alt="Service"
+  fill
+  sizes="360px"
+  className="object-cover"
+/>
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 

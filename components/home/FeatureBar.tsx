@@ -1,23 +1,23 @@
 import Image from "next/image";
-
+import { BASE_PATH } from "@/lib/basePath";
 const features = [
   {
-    icon: "/icons/shield.png",
+    icon: `${BASE_PATH}/icons/shield.png`,
     title: "KUALITAS TERJAMIN",
     desc: "Produk berkualitas tinggi\ndan bergaransi resmi",
   },
   {
-    icon: "/icons/support.png",
+    icon: `${BASE_PATH}/icons/support.png`,
     title: "SUPPORT 24 JAM",
     desc: "Tim kami siap membantu\nkapan pun Anda butuhkan",
   },
   {
-    icon: "/icons/technician.png",
+    icon: `${BASE_PATH}/icons/technician.png`,
     title: "TEKNISI PROFESIONAL",
     desc: "Berpengalaman & bersertifikat\ndi bidangnya",
   },
   {
-    icon: "/icons/handshake.png",
+    icon: `${BASE_PATH}/icons/handshake.png`,
     title: "LAYANAN TERPERCAYA",
     desc: "Kepuasan pelanggan adalah\nprioritas utama kami",
   },
