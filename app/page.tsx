@@ -66,7 +66,12 @@ export default function Home() {
             >
               📄 Minta Penawaran
             </Link>
-
+<Link
+  href="/produk/running-text"
+  className="rounded-xl bg-yellow-400 px-8 py-4 font-bold text-black transition hover:scale-105"
+>
+  🧮 Kalkulator LED
+</Link>
             <a
               href="https://wa.me/6285231353155"
               target="_blank"
