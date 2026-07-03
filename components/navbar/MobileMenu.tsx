@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ChevronDown } from "lucide-react";
 import { mainMenu, productMenu, serviceMenu } from "./menu";
@@ -9,6 +9,22 @@ export default function MobileMenu() {
   const [open, setOpen] = useState(false);
   const [productOpen, setProductOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
+
+  // Lock body scroll saat menu terbuka
+  useEffect(() => {
+    if (open) {
+      document.body.style.overflow = "hidden";
+      document.body.style.touchAction = "none";
+    } else {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+      document.body.style.touchAction = "";
+    };
+  }, [open]);
 
   return (
     <>
@@ -24,15 +40,13 @@ export default function MobileMenu() {
       <div
         onClick={() => setOpen(false)}
         className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
-          open
-            ? "visible opacity-100"
-            : "invisible opacity-0"
+          open ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       />
 
       {/* DRAWER */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-screen w-[330px] bg-white shadow-2xl transition-transform duration-300 ${
+        className={`fixed top-0 right-0 z-50 h-[100dvh] w-[330px] max-w-[90vw] bg-white shadow-2xl transform transition-transform duration-300 will-change-transform ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -50,12 +64,11 @@ export default function MobileMenu() {
         </div>
 
         {/* MENU */}
-        <div className="overflow-y-auto pb-10">
+        <div className="h-[calc(100dvh-80px)] overflow-y-auto pb-10">
 
           {mainMenu.map((item) => {
 
-            /* PRODUCTS */
-
+            // PRODUCTS
             if (item.mega === "products") {
               return (
                 <div key={item.title} className="border-b">
@@ -68,17 +81,21 @@ export default function MobileMenu() {
 
                     <ChevronDown
                       size={18}
-                      className={`transition ${
+                      className={`transition-transform duration-300 ${
                         productOpen ? "rotate-180" : ""
                       }`}
                     />
+
                   </button>
 
-                  {productOpen && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      productOpen ? "max-h-96" : "max-h-0"
+                    }`}
+                  >
                     <div className="bg-gray-50">
 
                       {productMenu.map((p) => (
-
                         <Link
                           key={p.title}
                           href={p.href}
@@ -87,18 +104,16 @@ export default function MobileMenu() {
                         >
                           {p.title}
                         </Link>
-
                       ))}
 
                     </div>
-                  )}
+                  </div>
 
                 </div>
               );
             }
 
-            /* SERVICES */
-
+            // SERVICES
             if (item.mega === "services") {
               return (
                 <div key={item.title} className="border-b">
@@ -111,17 +126,21 @@ export default function MobileMenu() {
 
                     <ChevronDown
                       size={18}
-                      className={`transition ${
+                      className={`transition-transform duration-300 ${
                         serviceOpen ? "rotate-180" : ""
                       }`}
                     />
+
                   </button>
 
-                  {serviceOpen && (
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ${
+                      serviceOpen ? "max-h-96" : "max-h-0"
+                    }`}
+                  >
                     <div className="bg-gray-50">
 
                       {serviceMenu.map((s) => (
-
                         <Link
                           key={s.title}
                           href={s.href}
@@ -130,18 +149,16 @@ export default function MobileMenu() {
                         >
                           {s.title}
                         </Link>
-
                       ))}
 
                     </div>
-                  )}
+                  </div>
 
                 </div>
               );
             }
 
-            /* MENU NORMAL */
-
+            // MENU BIASA
             return (
               <Link
                 key={item.title}
