@@ -1,37 +1,35 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronRight, ArrowLeft } from "lucide-react";
 import { mainMenu, productMenu, serviceMenu } from "./menu";
+
+type View = "main" | "products" | "services";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
-  const [productOpen, setProductOpen] = useState(false);
-  const [serviceOpen, setServiceOpen] = useState(false);
+  const [view, setView] = useState<View>("main");
 
-  // Lock body scroll saat menu terbuka
   useEffect(() => {
     if (open) {
       document.body.style.overflow = "hidden";
-      document.body.style.touchAction = "none";
     } else {
       document.body.style.overflow = "";
-      document.body.style.touchAction = "";
+      setView("main");
     }
 
     return () => {
       document.body.style.overflow = "";
-      document.body.style.touchAction = "";
     };
   }, [open]);
 
   return (
     <>
-      {/* BUTTON */}
+      {/* MENU BUTTON */}
       <button
         onClick={() => setOpen(true)}
-        className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 xl:hidden"
+        className="xl:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200"
       >
         <Menu size={24} />
       </button>
@@ -39,23 +37,35 @@ export default function MobileMenu() {
       {/* OVERLAY */}
       <div
         onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/50 transition-opacity duration-300 ${
-          open ? "opacity-100 visible" : "opacity-0 invisible"
+        className={`fixed inset-0 z-40 bg-black/50 transition-all duration-300 ${
+          open
+            ? "opacity-100 visible"
+            : "opacity-0 invisible"
         }`}
       />
 
       {/* DRAWER */}
       <aside
-        className={`fixed top-0 right-0 z-50 h-[100dvh] w-[330px] max-w-[90vw] bg-white shadow-2xl transform transition-transform duration-300 will-change-transform ${
+        className={`fixed right-0 top-0 z-50 h-screen w-[320px] bg-white shadow-2xl transition-transform duration-300 ${
           open ? "translate-x-0" : "translate-x-full"
         }`}
       >
         {/* HEADER */}
         <div className="flex items-center justify-between border-b px-6 py-5">
 
-          <h2 className="text-xl font-bold text-green-600">
-            OJIEID GROUP
-          </h2>
+          {view === "main" ? (
+            <h2 className="text-xl font-bold text-green-600">
+              OJIEID GROUP
+            </h2>
+          ) : (
+            <button
+              onClick={() => setView("main")}
+              className="flex items-center gap-2 font-semibold"
+            >
+              <ArrowLeft size={18} />
+              Kembali
+            </button>
+          )}
 
           <button onClick={() => setOpen(false)}>
             <X size={28} />
@@ -63,116 +73,96 @@ export default function MobileMenu() {
 
         </div>
 
-        {/* MENU */}
-        <div className="h-[calc(100dvh-80px)] overflow-y-auto pb-10">
+        {/* MAIN MENU */}
+        {view === "main" && (
+          <div className="py-2">
 
-          {mainMenu.map((item) => {
+            {mainMenu.map((item) => {
 
-            // PRODUCTS
-            if (item.mega === "products") {
-              return (
-                <div key={item.title} className="border-b">
-
+              if (item.mega === "products") {
+                return (
                   <button
-                    onClick={() => setProductOpen(!productOpen)}
-                    className="flex w-full items-center justify-between px-6 py-4 font-semibold"
+                    key={item.title}
+                    onClick={() => setView("products")}
+                    className="flex w-full items-center justify-between px-6 py-4 text-left font-semibold hover:bg-gray-100"
                   >
                     {item.title}
-
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 ${
-                        productOpen ? "rotate-180" : ""
-                      }`}
-                    />
-
+                    <ChevronRight size={18} />
                   </button>
+                );
+              }
 
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      productOpen ? "max-h-96" : "max-h-0"
-                    }`}
-                  >
-                    <div className="bg-gray-50">
-
-                      {productMenu.map((p) => (
-                        <Link
-                          key={p.title}
-                          href={p.href}
-                          onClick={() => setOpen(false)}
-                          className="block px-10 py-3 text-sm hover:text-green-600"
-                        >
-                          {p.title}
-                        </Link>
-                      ))}
-
-                    </div>
-                  </div>
-
-                </div>
-              );
-            }
-
-            // SERVICES
-            if (item.mega === "services") {
-              return (
-                <div key={item.title} className="border-b">
-
+              if (item.mega === "services") {
+                return (
                   <button
-                    onClick={() => setServiceOpen(!serviceOpen)}
-                    className="flex w-full items-center justify-between px-6 py-4 font-semibold"
+                    key={item.title}
+                    onClick={() => setView("services")}
+                    className="flex w-full items-center justify-between px-6 py-4 text-left font-semibold hover:bg-gray-100"
                   >
                     {item.title}
-
-                    <ChevronDown
-                      size={18}
-                      className={`transition-transform duration-300 ${
-                        serviceOpen ? "rotate-180" : ""
-                      }`}
-                    />
-
+                    <ChevronRight size={18} />
                   </button>
+                );
+              }
 
-                  <div
-                    className={`overflow-hidden transition-all duration-300 ${
-                      serviceOpen ? "max-h-96" : "max-h-0"
-                    }`}
-                  >
-                    <div className="bg-gray-50">
-
-                      {serviceMenu.map((s) => (
-                        <Link
-                          key={s.title}
-                          href={s.href}
-                          onClick={() => setOpen(false)}
-                          className="block px-10 py-3 text-sm hover:text-green-600"
-                        >
-                          {s.title}
-                        </Link>
-                      ))}
-
-                    </div>
-                  </div>
-
-                </div>
+              return (
+                <Link
+                  key={item.title}
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className="block px-6 py-4 font-semibold hover:bg-gray-100"
+                >
+                  {item.title}
+                </Link>
               );
-            }
+            })}
 
-            // MENU BIASA
-            return (
+          </div>
+        )}
+
+        {/* PRODUCT PAGE */}
+        {view === "products" && (
+          <div className="py-2">
+
+            <h3 className="px-6 py-3 text-lg font-bold text-green-600">
+              Produk
+            </h3>
+
+            {productMenu.map((item) => (
               <Link
                 key={item.title}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="block border-b px-6 py-4 font-semibold hover:text-green-600"
+                className="block px-6 py-4 hover:bg-gray-100"
               >
                 {item.title}
               </Link>
-            );
+            ))}
 
-          })}
+          </div>
+        )}
 
-        </div>
+        {/* SERVICE PAGE */}
+        {view === "services" && (
+          <div className="py-2">
+
+            <h3 className="px-6 py-3 text-lg font-bold text-green-600">
+              Services
+            </h3>
+
+            {serviceMenu.map((item) => (
+              <Link
+                key={item.title}
+                href={item.href}
+                onClick={() => setOpen(false)}
+                className="block px-6 py-4 hover:bg-gray-100"
+              >
+                {item.title}
+              </Link>
+            ))}
+
+          </div>
+        )}
 
       </aside>
     </>
