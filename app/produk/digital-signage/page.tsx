@@ -485,7 +485,7 @@ kebutuhan komunikasi digital secara profesional.
   <div className="p-6">
 
     <h3 className="text-xl font-bold text-gray-900">
-      Videotron Indoor
+      videotron Indoor
     </h3>
 
     <p className="mt-3 text-gray-600">
