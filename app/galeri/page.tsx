@@ -1,29 +1,30 @@
 import Image from "next/image";
+import { BASE_PATH } from "@/lib/basePath";
 
 const galeri = [
   {
     title: "Proyek Videotron Indoor",
-    image: "/galeri/project11.jpg",
+    image: `${BASE_PATH}/galeri/project11.jpg`,
   },
   {
     title: "Proyek Videotron Outdoor",
-    image: "/galeri/project12.jpg",
+    image: `${BASE_PATH}/galeri/project12.jpg`,
   },
   {
     title: "Running Text",
-    image: "/galeri/project13.jpg",
+    image: `${BASE_PATH}/galeri/project13.jpg`,
   },
   {
     title: "Digital Signage",
-    image: "/galeri/project14.jpg",
+    image: `${BASE_PATH}/galeri/project14.jpg`,
   },
   {
     title: "Instalasi WiFi",
-    image: "/galeri/project15.jpg",
+    image: `${BASE_PATH}/galeri/project15.jpg`,
   },
   {
     title: "Maintenance",
-    image: "/galeri/project16.jpg",
+    image: `${BASE_PATH}/galeri/project16.jpg`,
   },
 ];
 
