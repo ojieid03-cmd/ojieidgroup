@@ -207,7 +207,7 @@ ${message}
               hover:shadow-2xl
             "
           >
-            Kirim ke WhatsApp 💬
+            Kirim ke ADMIN
           </button>
 
         </form>
