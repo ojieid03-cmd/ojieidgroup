@@ -229,18 +229,17 @@ doc.text(
 );
 
 // Ganti warna ke biru
-doc.setTextColor(0, 153, 255);
-
-doc.setFont("helvetica", "bold");
+doc.setTextColor(0,153,255);
+doc.setFont("helvetica","bold");
 doc.setFontSize(10);
 
 doc.text(
-  "WhatsApp : 0852-3135-3155",
-  105,
-  finalY + 37,
-  {
-    align: "center",
-  }
+"WhatsApp : 0852-3135-3155",
+105,
+finalY + 35,
+{
+align:"center"
+}
 );
 
 // Kembalikan ke hitam agar QR dan tulisan bawah normal
@@ -250,24 +249,20 @@ doc.setFont("helvetica", "normal");
 doc.addImage(
   qr,
   "PNG",
-  18,
-  finalY + 18,
-  42,
-  42
+  82,
+  finalY + 38,
+  37,
+  37
 );
-
 doc.setFontSize(10);
 
 doc.setFontSize(9);
 doc.setTextColor(70);
 
-doc.setFontSize(8);
-doc.setTextColor(70);
-
 doc.text(
-  "Scan QR Code untuk mengirim hasil PDF ke Admin.",
-  39,
-  finalY + 66,
+  "Scan QR Code untuk menghubungi Admin dan mengirim hasil PDF.",
+  105,
+  finalY + 89,
   {
     align: "center",
   }
@@ -285,7 +280,7 @@ doc.text(
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
   115,
-  finalY + 70,
+  finalY + 99,
   {
     align: "center",
   }
@@ -306,7 +301,7 @@ for (let i = 1; i <= totalPages; i++) {
   doc.text(
     `Halaman ${i} / ${totalPages}`,
     195,
-    290,
+    289,
     {
       align: "right",
     }
