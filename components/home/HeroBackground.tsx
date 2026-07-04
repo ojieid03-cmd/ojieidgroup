@@ -5,7 +5,7 @@ export default function HeroBackground() {
     <>
       {/* Background Image */}
       <Image
-        src="/images/hero-new.png"
+        src="/images/hero-new.webp"
         alt="OJIEID GROUP"
         fill
         priority
