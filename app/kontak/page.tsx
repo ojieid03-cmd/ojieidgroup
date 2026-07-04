@@ -16,15 +16,15 @@ export default function KontakPage() {
             </p>
 
             <p className="font-medium">
-              📞 Admin : 0818436159
+              📞 Admin : 085231353155
             </p>
 
             <p className="font-medium">
-              📞 Marketing : 085204879946
+              📞 Marketing : 0818436159
             </p>
 
             <p className="font-medium">
-              📞 Teknisi : 085231353155
+              📞 Teknisi : 085700839896
             </p>
 
             <p className="font-medium">
