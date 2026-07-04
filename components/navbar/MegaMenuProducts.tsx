@@ -123,12 +123,12 @@ export default function MegaMenuProducts() {
         <div className="relative min-h-[620px] overflow-hidden rounded-r-3xl">
 
           <Image
-  src={`${BASE_PATH}/images/menu-product.jpg`}
-  alt="LED Display"
-  fill
-  sizes="360px"
-  className="object-cover"
-/>
+            src="/images/menu-product.webp"
+            alt="LED Display"
+            fill
+            sizes="360px"
+            className="object-cover"
+          />
 
           <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
 

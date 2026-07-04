@@ -42,15 +42,22 @@ export default function HeroContent() {
       {/* Button */}
       <div className="mt-8 flex flex-wrap gap-3 sm:mt-10 sm:gap-5">
 
-        <Button href="/produk">
-          📺 LIHAT PRODUK
-        </Button>
+  <Button
+    href="/produk"
+    className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-base"
+  >
+    📺 LIHAT PRODUK
+  </Button>
 
-        <Button href="/kontak" variant="outline">
-          💬 HUBUNGI KAMI
-        </Button>
+  <Button
+    href="/kontak"
+    variant="outline"
+    className="px-5 py-3 text-sm sm:px-8 sm:py-4 sm:text-base"
+  >
+    💬 HUBUNGI KAMI
+  </Button>
 
-      </div>
+</div>
 
     </div>
   );

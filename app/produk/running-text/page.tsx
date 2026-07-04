@@ -80,7 +80,7 @@ export default function RunningTextPage() {
 <div className="relative">
 
   <Image
-    src="/produk/running-text.jpg"
+    src="/produk/running-text.webp"
     alt="Running Text"
     width={700}
     height={700}
@@ -279,10 +279,10 @@ export default function RunningTextPage() {
     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
       {[
-  "/produk/running/running1.jpg",
-  "/produk/running/running2.jpg",
-  "/produk/running/running3.jpg",
-  "/produk/running/running4.jpg",
+  "/produk/running/running1.webp",
+  "/produk/running/running2.webp",
+  "/produk/running/running3.webp",
+  "/produk/running/running4.webp",
 ].map((img) => (
 
         <div
@@ -475,7 +475,7 @@ export default function RunningTextPage() {
 >
 
   <Image
-    src="/produk/videotron-indoor.jpg"
+    src="/produk/videotron-indoor.webp"
     alt="Videotron Indoor"
     width={500}
     height={350}
@@ -504,7 +504,7 @@ export default function RunningTextPage() {
       >
 
         <Image
-          src="/produk/running-text.jpg"
+          src="/produk/running-text.webp"
           alt="Running Text"
           width={500}
           height={350}
@@ -533,7 +533,7 @@ export default function RunningTextPage() {
       >
 
         <Image
-          src="/produk/running-text.jpg"
+          src="/produk/running-text.webp"
           alt="Running Text"
           width={500}
           height={350}
@@ -562,7 +562,7 @@ export default function RunningTextPage() {
       >
 
         <Image
-          src="/produk/video-wall.jpg"
+          src="/produk/video-wall.webp"
           alt="Video Wall"
           width={500}
           height={350}

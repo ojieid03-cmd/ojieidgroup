@@ -5,8 +5,45 @@ import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 
 export default function VideotronIndoorPage() {
+
+  const [open, setOpen] = useState<number | null>(0);
   return (
     <main>
+        {/* BREADCRUMB */}
+
+<section className="border-b bg-gray-50">
+
+  <div className="mx-auto flex max-w-7xl items-center gap-2 px-6 py-5 text-sm">
+
+    <Link
+      href="/"
+      className="text-gray-500 transition hover:text-green-600"
+    >
+      Home
+    </Link>
+
+    <span className="text-gray-400">
+      /
+    </span>
+
+    <Link
+      href="/produk"
+      className="text-gray-500 transition hover:text-green-600"
+    >
+      Produk
+    </Link>
+
+    <span className="text-gray-400">
+      /
+    </span>
+
+    <span className="font-semibold text-green-700">
+      Videotron Indoor
+    </span>
+
+  </div>
+
+</section>
 
       {/* HERO */}
 
@@ -44,7 +81,7 @@ export default function VideotronIndoorPage() {
 <div className="relative">
 
   <Image
-    src="/produk/videotron-indoor.jpg"
+    src="/produk/videotron-indoor.webp"
     alt="Videotron Indoor"
     width={700}
     height={700}
@@ -243,10 +280,10 @@ export default function VideotronIndoorPage() {
     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
       {[
-        "/produk/indoor/indoor1.jpg",
-        "/produk/indoor/indoor2.jpg",
-        "/produk/indoor/indoor3.jpg",
-        "/produk/indoor/indoor4.jpg",
+        "/produk/indoor/indoor1.webp",
+        "/produk/indoor/indoor2.webp",
+        "/produk/indoor/indoor3.webp",
+        "/produk/indoor/indoor4.webp",
       ].map((img) => (
 
         <div
@@ -321,6 +358,239 @@ export default function VideotronIndoorPage() {
   </div>
 
 </section>
+{/* FAQ */}
+
+<section className="bg-gray-100 py-24">
+
+  <div className="mx-auto max-w-4xl px-6">
+
+    <div className="text-center">
+
+      <span className="rounded-full bg-green-100 px-5 py-2 font-semibold text-green-700">
+        FAQ
+      </span>
+
+      <h2 className="mt-6 text-4xl font-black text-gray-900">
+        Pertanyaan yang Sering Ditanyakan
+      </h2>
+
+      <p className="mt-5 text-gray-600">
+        Berikut beberapa pertanyaan yang sering diajukan pelanggan kami.
+      </p>
+
+    </div>
+
+    <div className="mt-14 space-y-4">
+
+      {[
+        {
+          q: "Apa itu Videotron Indoor?",
+          a: "Videotron Indoor adalah layar LED digital dengan kualitas gambar tinggi yang digunakan di dalam ruangan seperti mall, hotel, ruang meeting, auditorium, gereja, masjid, showroom, dan command center."
+        },
+        {
+          q: "Apakah tersedia jasa instalasi?",
+          a: "Ya. OJIEID GROUP menyediakan instalasi profesional di seluruh Indonesia beserta konfigurasi dan testing."
+        },
+        {
+          q: "Apakah ada garansi?",
+          a: "Semua produk mendapatkan garansi resmi sesuai tipe produk serta dukungan after sales."
+        },
+        {
+          q: "Bisakah dibuat ukuran custom?",
+          a: "Bisa. Kami melayani pembuatan videotron indoor dengan ukuran sesuai kebutuhan proyek Anda."
+        }
+      ].map((item, index) => (
+
+        <div
+          key={index}
+          className="overflow-hidden rounded-2xl border border-gray-200 bg-white shadow"
+        >
+
+          <button
+            onClick={() =>
+              setOpen(open === index ? null : index)
+            }
+            className="flex w-full items-center justify-between px-6 py-5 text-left"
+          >
+
+            <span className="font-bold text-gray-900">
+              {item.q}
+            </span>
+
+            <ChevronDown
+              className={`transition ${
+                open === index ? "rotate-180" : ""
+              }`}
+            />
+
+          </button>
+
+          {open === index && (
+
+            <div className="border-t px-6 py-5 text-gray-600 leading-7">
+
+              {item.a}
+
+            </div>
+
+          )}
+
+        </div>
+
+      ))}
+
+    </div>
+
+  </div>
+
+</section>
+{/* PRODUK TERKAIT */}
+
+<section className="bg-white py-24">
+
+  <div className="mx-auto max-w-7xl px-6">
+
+    <div className="text-center">
+
+      <span className="rounded-full bg-green-100 px-5 py-2 font-semibold text-green-700">
+        Produk Lainnya
+      </span>
+
+      <h2 className="mt-6 text-4xl font-black text-gray-900">
+        Produk Terkait
+      </h2>
+
+      <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-600">
+        Temukan berbagai solusi LED Display dan Digital Technology
+        dari OJIEID GROUP.
+      </p>
+
+    </div>
+
+    <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+
+      {/* Outdoor */}
+
+      <Link
+        href="/produk/videotron-outdoor"
+        className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+      >
+
+        <Image
+          src="/produk/videotron-outdoor.webp"
+          alt="Videotron Outdoor"
+          width={500}
+          height={350}
+          className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
+        />
+
+        <div className="p-6">
+
+          <h3 className="text-xl font-bold text-gray-900">
+            Videotron Outdoor
+          </h3>
+
+          <p className="mt-3 text-gray-600">
+            LED Display outdoor dengan brightness tinggi untuk billboard digital.
+          </p>
+
+        </div>
+
+      </Link>
+
+      {/* Running Text */}
+
+      <Link
+        href="/produk/running-text"
+        className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+      >
+
+        <Image
+          src="/produk/running-text.webp"
+          alt="Running Text"
+          width={500}
+          height={350}
+          className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
+        />
+
+        <div className="p-6">
+
+          <h3 className="text-xl font-bold text-gray-900">
+            Running Text
+          </h3>
+
+          <p className="mt-3 text-gray-600">
+            Media informasi digital untuk toko, kantor dan instansi.
+          </p>
+
+        </div>
+
+      </Link>
+
+      {/* Digital Signage */}
+
+      <Link
+        href="/produk/digital-signage"
+        className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+      >
+
+        <Image
+          src="/produk/digital-signage.webp"
+          alt="Digital Signage"
+          width={500}
+          height={350}
+          className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
+        />
+
+        <div className="p-6">
+
+          <h3 className="text-xl font-bold text-gray-900">
+            Digital Signage
+          </h3>
+
+          <p className="mt-3 text-gray-600">
+            Solusi display digital modern untuk promosi bisnis Anda.
+          </p>
+
+        </div>
+
+      </Link>
+
+      {/* Video Wall */}
+
+      <Link
+        href="/produk/video-wall"
+        className="group overflow-hidden rounded-3xl border border-gray-200 bg-white shadow-lg transition hover:-translate-y-2 hover:shadow-2xl"
+      >
+
+        <Image
+          src="/produk/video-wall.webp"
+          alt="Video Wall"
+          width={500}
+          height={350}
+          className="h-52 w-full object-cover transition duration-700 group-hover:scale-110"
+        />
+
+        <div className="p-6">
+
+          <h3 className="text-xl font-bold text-gray-900">
+            Video Wall
+          </h3>
+
+          <p className="mt-3 text-gray-600">
+            Display premium untuk control room dan meeting room profesional.
+          </p>
+
+        </div>
+
+      </Link>
+
+    </div>
+
+  </div>
+
+</section>
+
     </main>
   );
 }

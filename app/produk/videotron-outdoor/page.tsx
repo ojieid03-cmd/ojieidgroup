@@ -81,7 +81,7 @@ promosi berskala besar.
 <div className="relative">
 
   <Image
-    src="/produk/videotron-outdoor.jpg"
+    src="/produk/videotron-outdoor.webp"
     alt="Videotron Outdoor"
     width={700}
     height={700}
@@ -280,10 +280,10 @@ promosi berskala besar.
     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
       {[
-        "/produk/outdoor/outdoor1.jpg",
-        "/produk/outdoor/outdoor2.jpg",
-        "/produk/outdoor/outdoor3.jpg",
-        "/produk/outdoor/outdoor4.jpg",
+        "/produk/outdoor/outdoor1.webp",
+        "/produk/outdoor/outdoor2.webp",
+        "/produk/outdoor/outdoor3.webp",
+        "/produk/outdoor/outdoor4.webp",
       ].map((img) => (
 
         <div
@@ -483,7 +483,7 @@ hingga konfigurasi sistem.`
 >
 
   <Image
-    src="/produk/videotron-indoor.jpg"
+    src="/produk/videotron-indoor.webp"
     alt="Videotron Indoor"
     width={500}
     height={350}
@@ -512,7 +512,7 @@ hingga konfigurasi sistem.`
       >
 
         <Image
-          src="/produk/running-text.jpg"
+          src="/produk/running-text.webp"
           alt="Running Text"
           width={500}
           height={350}
@@ -541,7 +541,7 @@ hingga konfigurasi sistem.`
       >
 
         <Image
-          src="/produk/digital-signage.jpg"
+          src="/produk/digital-signage.webp"
           alt="Digital Signage"
           width={500}
           height={350}
@@ -570,7 +570,7 @@ hingga konfigurasi sistem.`
       >
 
         <Image
-          src="/produk/video-wall.jpg"
+          src="/produk/video-wall.webp"
           alt="Video Wall"
           width={500}
           height={350}

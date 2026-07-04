@@ -80,7 +80,7 @@ kebutuhan komunikasi digital secara profesional.
 <div className="relative">
 
   <Image
-    src="/produk/digital-signage.jpg"
+    src="/produk/digital-signage.webp"
     alt="Digital Signage"
     width={700}
     height={700}
@@ -279,10 +279,10 @@ kebutuhan komunikasi digital secara profesional.
     <div className="mt-16 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
 
       {[
-  "/produk/digital/digital1.jpg",
-  "/produk/digital/digital2.jpg",
-  "/produk/digital/digital3.jpg",
-  "/produk/digital/digital4.jpg",
+  "/produk/digital/digital1.webp",
+  "/produk/digital/digital2.webp",
+  "/produk/digital/digital3.webp",
+  "/produk/digital/digital4.webp",
 ].map((img) => (
 
         <div
@@ -475,7 +475,7 @@ kebutuhan komunikasi digital secara profesional.
 >
 
   <Image
-    src="/produk/videotron-indoor.jpg"
+    src="/produk/videotron-indoor.webp"
     alt="Videotron Indoor"
     width={500}
     height={350}
@@ -504,7 +504,7 @@ kebutuhan komunikasi digital secara profesional.
       >
 
         <Image
-          src="/produk/running-text.jpg"
+          src="/produk/running-text.webp"
           alt="Running Text"
           width={500}
           height={350}
@@ -533,7 +533,7 @@ kebutuhan komunikasi digital secara profesional.
       >
 
         <Image
-          src="/produk/digital-signage.jpg"
+          src="/produk/digital-signage.webp"
           alt="Digital Signage"
           width={500}
           height={350}
@@ -562,7 +562,7 @@ kebutuhan komunikasi digital secara profesional.
       >
 
         <Image
-          src="/produk/video-wall.jpg"
+          src="/produk/video-wall.webp"
           alt="Video Wall"
           width={500}
           height={350}

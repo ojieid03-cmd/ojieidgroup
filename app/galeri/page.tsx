@@ -4,27 +4,27 @@ import { BASE_PATH } from "@/lib/basePath";
 const galeri = [
   {
     title: "Proyek Videotron Indoor",
-    image: `${BASE_PATH}/galeri/project11.jpg`,
+    image: `${BASE_PATH}/galeri/project11.webp`,
   },
   {
     title: "Proyek Videotron Outdoor",
-    image: `${BASE_PATH}/galeri/project12.jpg`,
+    image: `${BASE_PATH}/galeri/project12.webp`,
   },
   {
     title: "Running Text",
-    image: `${BASE_PATH}/galeri/project13.jpg`,
+    image: `${BASE_PATH}/galeri/project13.webp`,
   },
   {
     title: "Digital Signage",
-    image: `${BASE_PATH}/galeri/project14.jpg`,
+    image: `${BASE_PATH}/galeri/project14.webp`,
   },
   {
     title: "Instalasi WiFi",
-    image: `${BASE_PATH}/galeri/project15.jpg`,
+    image: `${BASE_PATH}/galeri/project15.webp`,
   },
   {
     title: "Maintenance",
-    image: `${BASE_PATH}/galeri/project16.jpg`,
+    image: `${BASE_PATH}/galeri/project16.webp`,
   },
 ];
 

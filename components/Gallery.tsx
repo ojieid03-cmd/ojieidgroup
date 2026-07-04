@@ -5,27 +5,27 @@ export default function Gallery() {
   const projects = [
   {
     title: "Videotron Indoor",
-    image: `${BASE_PATH}/gallery/project1.jpg`,
+    image: `${BASE_PATH}/gallery/project1.webp`,
   },
   {
     title: "Videotron Outdoor",
-    image: `${BASE_PATH}/gallery/project2.jpg`,
+    image: `${BASE_PATH}/gallery/project2.webp`,
   },
   {
     title: "Running Text",
-    image: `${BASE_PATH}/gallery/project3.jpg`,
+    image: `${BASE_PATH}/gallery/project3.webp`,
   },
   {
     title: "LED Display Event",
-    image: `${BASE_PATH}/gallery/project4.jpg`,
+    image: `${BASE_PATH}/gallery/project4.webp`,
   },
   {
     title: "WiFi & Networking",
-    image: `${BASE_PATH}/gallery/project5.jpg`,
+    image: `${BASE_PATH}/gallery/project5.webp`,
   },
   {
     title: "Maintenance",
-    image: `${BASE_PATH}/gallery/project6.jpg`,
+    image: `${BASE_PATH}/gallery/project6.webp`,
   },
 ];
 
@@ -60,17 +60,19 @@ export default function Gallery() {
               <div className="relative h-64 overflow-hidden">
 
                 <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
-                  className="
-                    object-cover
-                    transition-all
-                    duration-700
-                    group-hover:scale-110
-                  "
-                />
+  src={project.image}
+  alt={project.title}
+  fill
+  loading="lazy"
+  quality={70}
+  sizes="(max-width:768px)100vw,(max-width:1200px)50vw,33vw"
+  className="
+    object-cover
+    transition-all
+    duration-700
+    group-hover:scale-110
+  "
+/>
 
                 {/* Overlay */}
                 <div
