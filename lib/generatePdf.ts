@@ -249,29 +249,27 @@ doc.setFont("helvetica", "normal");
 doc.addImage(
   qr,
   "PNG",
-  82,
-  finalY + 38,
-  37,
-  37
+  85,
+  finalY + 36,
+  30,
+  30
 );
 doc.setFontSize(10);
 
-doc.setFontSize(9);
+doc.setFontSize(8);
 doc.setTextColor(70);
 
 doc.text(
   "Scan QR Code untuk menghubungi Admin dan mengirim hasil PDF.",
   105,
-  finalY + 89,
+  finalY + 70,
   {
     align: "center",
   }
 );
-doc.setFontSize(8);
+doc.setFontSize(7);
 
 doc.setTextColor(100);
-
-doc.setFontSize(7);
 
 doc.text(
   [
@@ -279,8 +277,8 @@ doc.text(
     "Hasil merupakan estimasi berdasarkan data yang dimasukkan.",
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
-  115,
-  finalY + 99,
+  105,
+  finalY + 79,
   {
     align: "center",
   }
@@ -301,7 +299,7 @@ for (let i = 1; i <= totalPages; i++) {
   doc.text(
     `Halaman ${i} / ${totalPages}`,
     195,
-    289,
+    286,
     {
       align: "right",
     }
