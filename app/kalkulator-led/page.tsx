@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { generatePdf } from "@/lib/generatePdf";
 
 export default function LedCalculatorPage() {
     const [jenis, setJenis] = useState("Outdoor");
@@ -227,7 +228,7 @@ setHasil({
     <label className="mb-2 block font-semibold">
       Lebar Display (meter)
     </label>
-
+tify-center
     <input
   type="number"
   value={lebar}
@@ -349,7 +350,7 @@ setHasil({
   <p className="text-gray-500">
     Penambahan Ukuran
   </p>
-
+ 
   <h4 className="mt-2 text-3xl font-bold text-green-700">
     +{hasil.sisaWidth.toFixed(2)} m × +{hasil.sisaHeight.toFixed(2)} m
   </h4>
@@ -406,6 +407,22 @@ Terima kasih.`)}
   >
     📲 Kirim Hasil ke WhatsApp
   </a>
+
+  <button
+  onClick={async () => {
+    await generatePdf({
+      jenis,
+      pitch,
+      cabinet,
+      lebar,
+      tinggi,
+      ...hasil,
+    });
+  }}
+  className="mt-4 w-full rounded-2xl bg-red-600 py-5 text-lg font-bold text-white transition hover:bg-red-700"
+>
+  📄 Download Hasil PDF
+</button>
 </div>
   </div>
 )}
