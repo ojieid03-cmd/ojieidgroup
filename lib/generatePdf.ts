@@ -40,27 +40,46 @@ Terima kasih.`;
 const qr = await generateQRCode(
   `https://wa.me/6285231353155?text=${encodeURIComponent(waText)}`
 );
+// Watermark
+doc.setTextColor(235, 235, 235);
 
+doc.setFont("helvetica", "bold");
+
+doc.setFontSize(48);
+
+doc.text(
+  "OJIEID GROUP",
+  105,
+  150,
+  {
+    angle: 45,
+    align: "center",
+  }
+);
+
+// Kembalikan warna teks
+doc.setTextColor(0, 0, 0);
   // Header Hijau
 doc.setFillColor(0, 128, 55);
-doc.rect(0, 0, 210, 38, "F");
+doc.rect(0, 0, 210, 28, "F");
 
 // Judul
 doc.setTextColor(255, 255, 255);
 
 doc.setFont("helvetica", "bold");
-doc.setFontSize(20);
 
-doc.text("OJIEID GROUP", 105, 16, {
+doc.setFontSize(18);
+
+doc.text("OJIEID GROUP", 105, 11, {
   align: "center",
 });
 
-doc.setFontSize(13);
+doc.setFontSize(11);
 
 doc.text(
   "HASIL PERHITUNGAN VIDEOTRON LED",
   105,
-  26,
+  19,
   {
     align: "center",
   }
@@ -74,15 +93,15 @@ doc.setTextColor(0, 0, 0);
   doc.text(
     `Tanggal : ${new Date().toLocaleString("id-ID")}`,
     14,
-    40
+    34
   );
 doc.text(
   `No. Dokumen : LED-${Date.now().toString().slice(-6)}`,
   14,
-  46
+  40
 );
   autoTable(doc, {
-  startY: 52,
+  startY: 45,
 
   theme: "grid",
 
@@ -149,7 +168,7 @@ doc.setFontSize(13);
 doc.text(
   "OJIEID GROUP",
   105,
-  finalY + 22,
+  finalY + 16,
   {
     align: "center",
   }
@@ -162,7 +181,7 @@ doc.setFontSize(10);
 doc.text(
   "Videotron • Running Text • LED Display",
   105,
-  finalY + 29,
+  finalY + 21,
   {
     align: "center",
   }
@@ -198,17 +217,44 @@ doc.text(
     align: "center",
   }
 );
+doc.setFontSize(8);
 
+doc.setTextColor(100);
+
+doc.text(
+  [
+    "Dokumen ini dibuat otomatis oleh Kalkulator Videotron OJIEID GROUP.",
+    "Hasil merupakan estimasi berdasarkan data yang dimasukkan.",
+    "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
+  ],
+  105,
+  finalY + 110,
+  {
+    align: "center",
+  }
+);
+
+doc.setTextColor(0);
 const today = new Date();
 
 const fileName =
-  `Perhitungan-Videotron-${
-    today.getFullYear()
-  }-${
-    String(today.getMonth() + 1).padStart(2, "0")
-  }-${
-    String(today.getDate()).padStart(2, "0")
-  }.pdf`;
+  `OJIEID-${data.pitch}-${data.lebar}x${data.tinggi}-${today.getFullYear()}${String(today.getMonth() + 1).padStart(2, "0")}${String(today.getDate()).padStart(2, "0")}.pdf`;
 
+const totalPages = doc.getNumberOfPages();
+
+for (let i = 1; i <= totalPages; i++) {
+  doc.setPage(i);
+
+  doc.setFontSize(9);
+
+  doc.text(
+    `Halaman ${i} / ${totalPages}`,
+    195,
+    290,
+    {
+      align: "right",
+    }
+  );
+}
 doc.save(fileName);
 }
