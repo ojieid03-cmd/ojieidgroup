@@ -37,8 +37,18 @@ Mohon dibuatkan penawaran harga.
 
 Terima kasih.`;
 
+const qrMessage = `Halo Admin OJIEID GROUP,
+
+Saya telah menggunakan Kalkulator Videotron LED.
+
+Mohon dibuatkan penawaran harga.
+
+Saya akan mengirimkan file PDF hasil perhitungan.
+
+Terima kasih.`;
+
 const qr = await generateQRCode(
-  `https://wa.me/6285231353155?text=${encodeURIComponent(waText)}`
+  `https://wa.me/6285231353155?text=${encodeURIComponent(qrMessage)}`
 );
 // Watermark
 doc.setTextColor(0,153,255);
@@ -240,10 +250,10 @@ doc.setFont("helvetica", "normal");
 doc.addImage(
   qr,
   "PNG",
-  25,
-  finalY + 24,
-  37,
-  37
+  18,
+  finalY + 18,
+  42,
+  42
 );
 
 doc.setFontSize(10);
@@ -251,10 +261,13 @@ doc.setFontSize(10);
 doc.setFontSize(9);
 doc.setTextColor(70);
 
+doc.setFontSize(8);
+doc.setTextColor(70);
+
 doc.text(
-  "Scan QR Code untuk langsung mengirim hasil perhitungan ke WhatsApp.",
-  47,
-  finalY + 74,
+  "Scan QR Code untuk mengirim hasil PDF ke Admin.",
+  39,
+  finalY + 66,
   {
     align: "center",
   }
@@ -263,19 +276,20 @@ doc.setFontSize(8);
 
 doc.setTextColor(100);
 
+doc.setFontSize(7);
+
 doc.text(
   [
     "Dokumen ini dibuat otomatis oleh Kalkulator Videotron OJIEID GROUP.",
     "Hasil merupakan estimasi berdasarkan data yang dimasukkan.",
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
-  105,
-  finalY + 72,
+  115,
+  finalY + 70,
   {
     align: "center",
   }
 );
-
 doc.setTextColor(0);
 const today = new Date();
 
@@ -292,7 +306,7 @@ for (let i = 1; i <= totalPages; i++) {
   doc.text(
     `Halaman ${i} / ${totalPages}`,
     195,
-    283,
+    290,
     {
       align: "right",
     }
