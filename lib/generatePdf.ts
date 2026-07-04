@@ -41,11 +41,11 @@ const qr = await generateQRCode(
   `https://wa.me/6285231353155?text=${encodeURIComponent(waText)}`
 );
 // Watermark
-doc.setTextColor(235, 235, 235);
+doc.setTextColor(0,153,255);
 
-doc.setFont("helvetica", "bold");
+doc.setFont("helvetica","bold");
 
-doc.setFontSize(48);
+doc.setFontSize(14);
 
 doc.text(
   "OJIEID GROUP",
@@ -154,17 +154,44 @@ doc.text(
 // Garis pembatas
 doc.setDrawColor(0, 153, 255);
 
+doc.setDrawColor(0, 153, 255);
+doc.setLineWidth(0.3);
+
 doc.line(
-  20,
-  finalY + 12,
-  190,
-  finalY + 12
+  15,
+  finalY + 10,
+  195,
+  finalY + 10
 );
 
 // Nama perusahaan
 doc.setFont("helvetica", "bold");
 doc.setFontSize(11);
+doc.setDrawColor(0,153,255);
+doc.setLineWidth(0.5);
 
+// kiri
+doc.line(
+  55,
+  finalY + 18,
+  78,
+  finalY + 18
+);
+
+// kanan
+doc.line(
+  132,
+  finalY + 18,
+  155,
+  finalY + 18
+);
+
+// titik kiri
+doc.setFillColor(0,153,255);
+doc.circle(55, finalY + 18, 0.8, "F");
+
+// titik kanan
+doc.circle(155, finalY + 18, 0.8, "F");
 doc.text(
   "OJIEID GROUP",
   105,
@@ -178,6 +205,10 @@ doc.text(
 doc.setFont("helvetica", "normal");
 doc.setFontSize(10);
 
+doc.setFont("helvetica", "normal");
+doc.setFontSize(9);
+doc.setTextColor(90);
+
 doc.text(
   "Videotron • Running Text • LED Display",
   105,
@@ -187,7 +218,12 @@ doc.text(
   }
 );
 
-// WhatsApp
+// Ganti warna ke biru
+doc.setTextColor(0, 153, 255);
+
+doc.setFont("helvetica", "bold");
+doc.setFontSize(10);
+
 doc.text(
   "WhatsApp : 0852-3135-3155",
   105,
@@ -196,6 +232,10 @@ doc.text(
     align: "center",
   }
 );
+
+// Kembalikan ke hitam agar QR dan tulisan bawah normal
+doc.setTextColor(0);
+doc.setFont("helvetica", "normal");
 
 doc.addImage(
   qr,
