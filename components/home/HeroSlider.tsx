@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 import { BASE_PATH } from "@/lib/basePath";
 
 const slides = [
-  `${BASE_PATH}/images/hero/hero-new1.webp`,
-  `${BASE_PATH}/images/hero/hero-new2.webp`,
-  `${BASE_PATH}/images/hero/hero-new3.webp`,
-  `${BASE_PATH}/images/hero/hero-new4.webp`,
+  `${BASE_PATH}/images/hero/hero-new1-v2.webp`,
+  `${BASE_PATH}/images/hero/hero-new2-v2.webp`,
+  `${BASE_PATH}/images/hero/hero-new3-v2.webp`,
+  `${BASE_PATH}/images/hero/hero-new4-v2.webp`,
 ];
 
 export default function HeroSlider() {
