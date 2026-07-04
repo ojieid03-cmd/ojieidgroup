@@ -138,7 +138,9 @@ export default function Navbar() {
 
         {/* ================= MOBILE ================= */}
 
-        <MobileMenu />
+        <div className="xl:hidden">
+  <MobileMenu />
+</div>
 
       </div>
 

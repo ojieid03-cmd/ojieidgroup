@@ -50,11 +50,8 @@ export default function MobileMenu() {
       {/* MENU BUTTON */}
       <button
   type="button"
-  onClick={(e) => {
-    e.stopPropagation();
-    setOpen((prev) => !prev);
-  }}
-  className="xl:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white"
+  onClick={() => setOpen(true)}
+  className="flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200"
 >
   {open ? <X size={24} /> : <Menu size={24} />}
 </button>
@@ -71,8 +68,10 @@ export default function MobileMenu() {
 
       {/* DRAWER */}
       <aside
-  className={`fixed top-0 right-0 z-50 h-screen w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ${
-    open ? "translate-x-0" : "translate-x-full"
+  className={`fixed inset-y-0 right-0 z-[9999] h-screen w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ease-in-out ${
+    open
+      ? "translate-x-0"
+      : "translate-x-full pointer-events-none"
   }`}
 >
         {/* HEADER */}
