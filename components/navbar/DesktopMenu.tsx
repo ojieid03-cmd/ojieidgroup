@@ -5,18 +5,13 @@ import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { mainMenu } from "./menu";
+import MegaMenuProducts from "./MegaMenuProducts";
 
 export default function DesktopMenu() {
   const pathname = usePathname();
 
   return (
-    <nav
-  className="
-    hidden
-    xl:flex
-    items-center
-  "
->
+    <nav className="hidden xl:flex items-center">
 
       {mainMenu.map((item) => {
 
@@ -38,8 +33,8 @@ export default function DesktopMenu() {
                   items-center
                   gap-1
                   px-2 lg:px-5
-py-4 lg:py-9
-text-[13px] lg:text-[15px]
+                  py-4 lg:py-9
+                  text-[13px] lg:text-[15px]
                   font-semibold
                   text-gray-800
                   transition-all
@@ -57,7 +52,10 @@ text-[13px] lg:text-[15px]
                     group-hover:rotate-180
                   "
                 />
+
               </button>
+
+              <MegaMenuProducts />
 
             </div>
           );
@@ -72,8 +70,8 @@ text-[13px] lg:text-[15px]
             className={`
               relative
               px-2 lg:px-5
-py-4 lg:py-9
-text-[13px] lg:text-[15px]
+              py-4 lg:py-9
+              text-[13px] lg:text-[15px]
               font-semibold
               transition-all
               duration-300
@@ -90,7 +88,7 @@ text-[13px] lg:text-[15px]
               className={`
                 absolute
                 bottom-2 lg:bottom-7
-left-2 lg:left-5
+                left-2 lg:left-5
                 h-[2px]
                 rounded-full
                 bg-green-600
@@ -99,10 +97,11 @@ left-2 lg:left-5
                 ${
                   active
                     ? "w-8"
-                    : "w-0 hover:w-8"
+                    : "w-0"
                 }
               `}
             />
+
           </Link>
         );
 
