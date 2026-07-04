@@ -21,6 +21,15 @@ type View = "main" | "products" | "services";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
+  useEffect(() => {
+  const closeMenu = () => setOpen(false);
+
+  window.addEventListener("resize", closeMenu);
+
+  return () => {
+    window.removeEventListener("resize", closeMenu);
+  };
+}, []);
   const [view, setView] = useState<View>("main");
 
   useEffect(() => {
@@ -40,28 +49,32 @@ export default function MobileMenu() {
     <>
       {/* MENU BUTTON */}
       <button
-        onClick={() => setOpen(true)}
-        className="xl:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200"
-      >
-        <Menu size={24} />
-      </button>
+  type="button"
+  onClick={(e) => {
+    e.stopPropagation();
+    setOpen((prev) => !prev);
+  }}
+  className="xl:hidden flex h-11 w-11 items-center justify-center rounded-xl border border-gray-200 bg-white"
+>
+  {open ? <X size={24} /> : <Menu size={24} />}
+</button>
 
       {/* OVERLAY */}
       <div
-        onClick={() => setOpen(false)}
-        className={`fixed inset-0 z-40 bg-black/50 transition-all duration-300 ${
-          open
-            ? "opacity-100 visible"
-            : "opacity-0 invisible"
-        }`}
-      />
+  onClick={() => setOpen(false)}
+  className={`fixed inset-0 z-40 bg-black/50 transition-all duration-300 ${
+    open
+      ? "visible opacity-100"
+      : "invisible opacity-0"
+  }`}
+/>
 
       {/* DRAWER */}
       <aside
-        className={`fixed right-0 top-0 z-50 h-screen w-[320px] bg-white shadow-2xl transition-transform duration-300 ${
-          open ? "translate-x-0" : "translate-x-full"
-        }`}
-      >
+  className={`fixed top-0 right-0 z-50 h-screen w-[320px] bg-white shadow-2xl transform transition-transform duration-300 ${
+    open ? "translate-x-0" : "translate-x-full"
+  }`}
+>
         {/* HEADER */}
         <div
   className="
