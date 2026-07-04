@@ -5,8 +5,6 @@ import { ChevronDown } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 import { mainMenu } from "./menu";
-import MegaMenuProducts from "./MegaMenuProducts";
-import MegaMenuServices from "./MegaMenuServices";
 
 export default function DesktopMenu() {
   const pathname = usePathname();
@@ -61,47 +59,6 @@ text-[13px] lg:text-[15px]
                 />
               </button>
 
-              <MegaMenuProducts />
-            </div>
-          );
-        }
-
-        // ================= SERVICES =================
-
-        if (item.mega === "services") {
-          return (
-            <div
-              key={item.title}
-              className="group relative"
-            >
-              <button
-                className="
-                  flex
-                  items-center
-                  gap-1
-                  px-2 lg:px-5
-py-4 lg:py-9
-text-[13px] lg:text-[15px]
-                  font-semibold
-                  text-gray-800
-                  transition-all
-                  duration-300
-                  hover:text-green-600
-                "
-              >
-                {item.title}
-
-                <ChevronDown
-                  size={17}
-                  className="
-                    transition-transform
-                    duration-300
-                    group-hover:rotate-180
-                  "
-                />
-              </button>
-
-              <MegaMenuServices />
             </div>
           );
         }

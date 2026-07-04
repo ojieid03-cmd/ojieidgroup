@@ -3,10 +3,6 @@ import {
   Tv,
   PanelTop,
   RadioTower,
-  Wrench,
-  Network,
-  ShieldCheck,
-  Headphones,
 } from "lucide-react";
 
 export const mainMenu = [
@@ -20,16 +16,13 @@ export const mainMenu = [
     mega: "products",
   },
   {
-    title: "SERVICES",
-    href: "#",
-    mega: "services",
-  },
-
-  {
     title: "KALKULATOR LED",
     href: "/kalkulator-led",
   },
-
+  {
+    title: "NEWS",
+    href: "/news",
+  },
   {
     title: "GALLERY",
     href: "/galeri",
@@ -64,28 +57,5 @@ export const productMenu = [
     title: "Running Text",
     href: "/produk/running-text",
     icon: RadioTower,
-  },
-];
-
-export const serviceMenu = [
-  {
-    title: "Installation",
-    href: "/penawaran",
-    icon: Wrench,
-  },
-  {
-    title: "Networking",
-    href: "/penawaran",
-    icon: Network,
-  },
-  {
-    title: "Maintenance",
-    href: "/penawaran",
-    icon: ShieldCheck,
-  },
-  {
-    title: "Technical Support",
-    href: "/penawaran",
-    icon: Headphones,
   },
 ];

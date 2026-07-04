@@ -14,10 +14,9 @@ import {
 import {
   mainMenu,
   productMenu,
-  serviceMenu,
 } from "./menu";
 
-type View = "main" | "products" | "services";
+type View = "main" | "products";
 
 export default function MobileMenu() {
   const [open, setOpen] = useState(false);
@@ -129,18 +128,6 @@ export default function MobileMenu() {
                 );
               }
 
-              if (item.mega === "services") {
-                return (
-                  <button
-                    key={item.title}
-                    onClick={() => setView("services")}
-                    className="flex w-full items-center justify-between px-6 py-4 text-left font-semibold hover:bg-gray-100"
-                  >
-                    {item.title}
-                    <ChevronRight size={18} />
-                  </button>
-                );
-              }
 
               return (
                 <Link
@@ -233,74 +220,6 @@ hover:text-green-600
 
   </div>
 )}
-        {/* SERVICE PAGE */}
-{view === "services" && (
-  <div className="flex h-full flex-col">
-
-    <h3 className="border-b px-6 py-5 text-xl font-bold text-green-600">
-      Services
-    </h3>
-
-    <div className="flex-1 overflow-y-auto">
-
-      {serviceMenu.map((item) => (
-
-        <Link
-          key={item.title}
-          href={item.href}
-          onClick={() => setOpen(false)}
-          className="
-            flex
-            items-center
-            justify-between
-            border-b
-            px-6
-            py-4
-            font-medium
-            transition
-            hover:bg-green-50
-            hover:text-green-600
-          "
-        >
-          <span>{item.title}</span>
-
-          <ChevronRight size={18} />
-
-        </Link>
-
-      ))}
-
-    </div>
-
-    <div className="border-t p-6">
-
-      <Link
-        href="/penawaran"
-        onClick={() => setOpen(false)}
-        className="
-          flex
-          items-center
-          justify-center
-          gap-2
-          rounded-xl
-          bg-green-600
-          px-5
-          py-3
-          font-semibold
-          text-white
-          transition
-          hover:bg-green-700
-        "
-      >
-        <Phone size={18} />
-        REQUEST QUOTE
-      </Link>
-
-    </div>
-
-  </div>
-)}
-
       </aside>
     </>
   );
