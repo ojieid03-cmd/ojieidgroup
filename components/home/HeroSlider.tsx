@@ -46,29 +46,10 @@ export default function HeroSlider() {
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-black/25" />
 
       {/* Prev */}
-      <button
-        onClick={() =>
-          setCurrent((prev) =>
-            prev === 0 ? slides.length - 1 : prev - 1
-          )
-        }
-        className="absolute left-6 top-1/2 z-40 -translate-y-1/2 rounded-full bg-black/40 p-4 text-2xl text-white backdrop-blur transition hover:bg-green-600"
-      >
-        ❮
-      </button>
+      
 
       {/* Next */}
-      <button
-        onClick={() =>
-          setCurrent((prev) =>
-            prev === slides.length - 1 ? 0 : prev + 1
-          )
-        }
-        className="absolute right-6 top-1/2 z-40 -translate-y-1/2 rounded-full bg-black/40 p-4 text-2xl text-white backdrop-blur transition hover:bg-green-600"
-      >
-        ❯
-      </button>
-
+      
       {/* Dot Indicator */}
       <div className="absolute bottom-11 left-1/2 z-40 flex -translate-x-1/2 gap-3">
         {slides.map((_, index) => (
