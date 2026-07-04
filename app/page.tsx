@@ -53,7 +53,7 @@ export default function Home() {
           </h2>
 
           <p className="mx-auto mt-6 max-w-3xl text-lg text-green-100">
-            OJIEID GROUP SEJAHTERA siap membantu Videotron,
+            Tim OJIEID GROUP siap membantu dalam hal Videotron,
             Running Text, LED Display, WiFi Network,
             Maintenance & Instalasi.
           </p>
@@ -91,7 +91,7 @@ export default function Home() {
         <div className="mx-auto max-w-7xl px-6 text-center">
 
           <h3 className="text-2xl font-bold">
-            OJIEID GROUP SEJAHTERA
+            OJIEID GROUP
           </h3>
 
           <p className="mt-4 text-gray-400">
