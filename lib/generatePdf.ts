@@ -242,8 +242,8 @@ doc.addImage(
   "PNG",
   25,
   finalY + 24,
-  45,
-  45
+  37,
+  37
 );
 
 doc.setFontSize(10);
