@@ -228,7 +228,7 @@ setHasil({
     <label className="mb-2 block font-semibold">
       Lebar Display (meter)
     </label>
-tify-center
+
     <input
   type="number"
   value={lebar}

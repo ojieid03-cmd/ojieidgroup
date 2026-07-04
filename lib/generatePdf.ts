@@ -41,15 +41,33 @@ const qr = await generateQRCode(
   `https://wa.me/6285231353155?text=${encodeURIComponent(waText)}`
 );
 
-  doc.setFontSize(18);
-  doc.text("OJIEID GROUP", 105, 20, {
-    align: "center",
-  });
+  // Header Hijau
+doc.setFillColor(0, 128, 55);
+doc.rect(0, 0, 210, 38, "F");
 
-  doc.setFontSize(14);
-  doc.text("HASIL PERHITUNGAN VIDEOTRON LED", 105, 30, {
+// Judul
+doc.setTextColor(255, 255, 255);
+
+doc.setFont("helvetica", "bold");
+doc.setFontSize(20);
+
+doc.text("OJIEID GROUP", 105, 16, {
+  align: "center",
+});
+
+doc.setFontSize(13);
+
+doc.text(
+  "HASIL PERHITUNGAN VIDEOTRON LED",
+  105,
+  26,
+  {
     align: "center",
-  });
+  }
+);
+
+// Reset warna
+doc.setTextColor(0, 0, 0);
 
   doc.setFontSize(10);
 
@@ -58,11 +76,34 @@ const qr = await generateQRCode(
     14,
     40
   );
-
+doc.text(
+  `No. Dokumen : LED-${Date.now().toString().slice(-6)}`,
+  14,
+  46
+);
   autoTable(doc, {
-    startY: 48,
-    head: [["Item", "Hasil"]],
-    body: [
+  startY: 52,
+
+  theme: "grid",
+
+  headStyles: {
+    fillColor: [0, 128, 55],
+    textColor: 255,
+    halign: "center",
+  },
+
+  styles: {
+    fontSize: 10,
+    cellPadding: 3,
+  },
+
+  alternateRowStyles: {
+    fillColor: [245, 250, 245],
+  },
+
+  head: [["Item", "Hasil"]],
+
+  body: [
       ["Jenis LED", data.jenis],
       ["Pixel Pitch", data.pitch],
       ["Ukuran Cabinet", data.cabinet],
@@ -91,19 +132,47 @@ const qr = await generateQRCode(
 
   const finalY = (doc as any).lastAutoTable.finalY;
 
+// Garis pembatas
+doc.setDrawColor(0, 128, 55);
+
+doc.line(
+  20,
+  finalY + 12,
+  190,
+  finalY + 12
+);
+
+// Nama perusahaan
+doc.setFont("helvetica", "bold");
+doc.setFontSize(13);
+
 doc.text(
   "OJIEID GROUP",
   105,
-  finalY + 20,
+  finalY + 22,
   {
     align: "center",
   }
 );
 
+// Deskripsi
+doc.setFont("helvetica", "normal");
+doc.setFontSize(10);
+
+doc.text(
+  "Videotron • Running Text • LED Display",
+  105,
+  finalY + 29,
+  {
+    align: "center",
+  }
+);
+
+// WhatsApp
 doc.text(
   "WhatsApp : 0852-3135-3155",
   105,
-  finalY + 28,
+  finalY + 35,
   {
     align: "center",
   }
@@ -114,7 +183,7 @@ doc.addImage(
   qr,
   "PNG",
   80,
-  finalY + 38,
+  finalY + 45,
   50,
   50
 );
@@ -124,11 +193,22 @@ doc.setFontSize(10);
 doc.text(
   "Scan QR Code untuk langsung mengirim hasil perhitungan ke WhatsApp.",
   105,
-  finalY + 95,
+  finalY + 101,
   {
     align: "center",
   }
 );
 
-doc.save("Perhitungan-Videotron-OJIEID.pdf");
+const today = new Date();
+
+const fileName =
+  `Perhitungan-Videotron-${
+    today.getFullYear()
+  }-${
+    String(today.getMonth() + 1).padStart(2, "0")
+  }-${
+    String(today.getDate()).padStart(2, "0")
+  }.pdf`;
+
+doc.save(fileName);
 }
