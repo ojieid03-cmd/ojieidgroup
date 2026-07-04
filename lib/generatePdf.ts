@@ -195,7 +195,7 @@ doc.circle(155, finalY + 18, 0.8, "F");
 doc.text(
   "OJIEID GROUP",
   105,
-  finalY + 18,
+  finalY + 20,
   {
     align: "center",
   }
@@ -212,7 +212,7 @@ doc.setTextColor(90);
 doc.text(
   "Videotron • Running Text • LED Display",
   105,
-  finalY + 24,
+  finalY + 27,
   {
     align: "center",
   }
@@ -227,7 +227,7 @@ doc.setFontSize(10);
 doc.text(
   "WhatsApp : 0852-3135-3155",
   105,
-  finalY + 31,
+  finalY + 37,
   {
     align: "center",
   }
@@ -240,18 +240,21 @@ doc.setFont("helvetica", "normal");
 doc.addImage(
   qr,
   "PNG",
-  90,
-  finalY + 34,
-  37,
-  37
+  25,
+  finalY + 24,
+  45,
+  45
 );
 
 doc.setFontSize(10);
 
+doc.setFontSize(9);
+doc.setTextColor(70);
+
 doc.text(
   "Scan QR Code untuk langsung mengirim hasil perhitungan ke WhatsApp.",
-  105,
-  finalY + 68,
+  47,
+  finalY + 74,
   {
     align: "center",
   }
@@ -267,7 +270,7 @@ doc.text(
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
   105,
-  finalY + 75,
+  finalY + 72,
   {
     align: "center",
   }
