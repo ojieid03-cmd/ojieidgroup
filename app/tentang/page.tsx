@@ -1,46 +1,178 @@
+import {
+  Building2,
+  Target,
+  Eye,
+  CheckCircle2,
+} from "lucide-react";
+
 export default function TentangPage() {
   return (
-    <main className="min-h-screen bg-gray-100 py-16">
-      <div className="mx-auto max-w-5xl px-6">
+    <main className="min-h-screen bg-gray-100 py-20">
+      <div className="mx-auto max-w-6xl px-6">
 
-        <h1 className="mb-10 text-center text-4xl font-bold text-green-700">
-          OJIEID GROUP SEJAHTERA
-        </h1>
+        {/* Header */}
 
-        <div className="rounded-xl bg-white p-8 shadow-lg">
+        <div className="mb-14 text-center">
 
-          <h2 className="text-2xl font-bold text-green-700">
-            Siapa Kami?
-          </h2>
+          <span className="rounded-full bg-green-100 px-5 py-2 font-semibold text-green-700">
+            TENTANG OJIEID GROUP
+          </span>
 
-          <p className="mt-4 text-gray-700 leading-8">
-            OJIEID GROUP SEJAHTERA merupakan perusahaan yang bergerak
-            di bidang teknologi digital, menyediakan solusi Videotron,
-            Running Text, Digital Signage, WiFi Internet,
-            instalasi, maintenance, serta layanan teknis profesional
-            untuk kebutuhan bisnis, pemerintahan, pendidikan,
-            rumah ibadah, dan berbagai sektor lainnya.
+          <h1 className="mt-6 text-5xl font-black text-gray-900">
+            OJIEID GROUP{" "}
+            <span className="text-green-600">
+              SEJAHTERA
+            </span>
+          </h1>
+
+          <p className="mx-auto mt-5 max-w-3xl text-lg text-gray-600">
+            Smart Digital Technology Solution untuk Videotron,
+            LED Display, Running Text, Networking,
+            Digital Signage, Maintenance serta berbagai
+            kebutuhan teknologi digital di Indonesia.
           </p>
 
-          <h2 className="mt-10 text-2xl font-bold text-green-700">
-            Visi
-          </h2>
+        </div>
 
-          <p className="mt-3 text-gray-700">
-            Menjadi perusahaan teknologi digital terpercaya di Indonesia
-            yang memberikan pelayanan terbaik dan produk berkualitas.
-          </p>
+        {/* Company */}
 
-          <h2 className="mt-10 text-2xl font-bold text-green-700">
-            Misi
-          </h2>
+        <div className="grid gap-8 lg:grid-cols-2">
 
-          <ul className="mt-4 list-disc pl-6 space-y-2 text-gray-700">
-            <li>Menyediakan produk berkualitas tinggi.</li>
-            <li>Memberikan pelayanan terbaik kepada pelanggan.</li>
-            <li>Mengembangkan teknologi digital yang inovatif.</li>
-            <li>Membangun kerja sama jangka panjang dengan pelanggan.</li>
-          </ul>
+          <div className="rounded-3xl bg-white p-8 shadow-xl">
+
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100">
+
+              <Building2
+                size={34}
+                className="text-green-600"
+              />
+
+            </div>
+
+            <h2 className="text-3xl font-bold text-gray-900">
+              Siapa Kami?
+            </h2>
+
+            <p className="mt-6 leading-9 text-gray-600">
+
+              OJIEID GROUP SEJAHTERA merupakan perusahaan
+              yang bergerak di bidang teknologi digital,
+              menyediakan solusi Videotron, LED Display,
+              Running Text, Digital Signage, WiFi Internet,
+              instalasi, maintenance hingga Technical
+              Support profesional.
+
+            </p>
+
+            <p className="mt-5 leading-9 text-gray-600">
+
+              Kami melayani perusahaan, instansi pemerintah,
+              sekolah, rumah ibadah, UMKM hingga berbagai
+              kebutuhan industri di seluruh Indonesia.
+
+            </p>
+
+          </div>
+
+          <div className="rounded-3xl bg-gradient-to-br from-green-600 to-green-800 p-10 text-white shadow-xl">
+
+            <h2 className="text-3xl font-bold">
+              Kenapa Memilih Kami?
+            </h2>
+
+            <div className="mt-8 space-y-5">
+
+              <div className="flex gap-3">
+                <CheckCircle2 />
+                Produk berkualitas tinggi
+              </div>
+
+              <div className="flex gap-3">
+                <CheckCircle2 />
+                Tim teknisi profesional
+              </div>
+
+              <div className="flex gap-3">
+                <CheckCircle2 />
+                Garansi & after sales
+              </div>
+
+              <div className="flex gap-3">
+                <CheckCircle2 />
+                Support seluruh Indonesia
+              </div>
+
+              <div className="flex gap-3">
+                <CheckCircle2 />
+                Respon cepat melalui WhatsApp
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        {/* Vision Mission */}
+
+        <div className="mt-10 grid gap-8 lg:grid-cols-2">
+
+          <div className="rounded-3xl bg-white p-8 shadow-xl">
+
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100">
+
+              <Eye
+                size={34}
+                className="text-green-600"
+              />
+
+            </div>
+
+            <h2 className="text-3xl font-bold">
+              Visi
+            </h2>
+
+            <p className="mt-6 leading-9 text-gray-600">
+
+              Menjadi perusahaan teknologi digital terpercaya
+              di Indonesia yang mampu memberikan solusi terbaik,
+              produk berkualitas tinggi serta pelayanan yang
+              profesional kepada seluruh pelanggan.
+
+            </p>
+
+          </div>
+
+          <div className="rounded-3xl bg-white p-8 shadow-xl">
+
+            <div className="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-green-100">
+
+              <Target
+                size={34}
+                className="text-green-600"
+              />
+
+            </div>
+
+            <h2 className="text-3xl font-bold">
+              Misi
+            </h2>
+
+            <ul className="mt-6 space-y-4 text-gray-600">
+
+              <li>✅ Menyediakan produk LED Display berkualitas.</li>
+
+              <li>✅ Memberikan pelayanan terbaik kepada pelanggan.</li>
+
+              <li>✅ Mengembangkan solusi teknologi digital inovatif.</li>
+
+              <li>✅ Menjalin kerja sama jangka panjang.</li>
+
+              <li>✅ Menjadi partner teknologi terpercaya.</li>
+
+            </ul>
+
+          </div>
 
         </div>
 
