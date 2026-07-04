@@ -163,12 +163,12 @@ doc.line(
 
 // Nama perusahaan
 doc.setFont("helvetica", "bold");
-doc.setFontSize(13);
+doc.setFontSize(11);
 
 doc.text(
   "OJIEID GROUP",
   105,
-  finalY + 16,
+  finalY + 18,
   {
     align: "center",
   }
@@ -181,7 +181,7 @@ doc.setFontSize(10);
 doc.text(
   "Videotron • Running Text • LED Display",
   105,
-  finalY + 21,
+  finalY + 24,
   {
     align: "center",
   }
@@ -191,7 +191,7 @@ doc.text(
 doc.text(
   "WhatsApp : 0852-3135-3155",
   105,
-  finalY + 35,
+  finalY + 31,
   {
     align: "center",
   }
@@ -200,10 +200,10 @@ doc.text(
 doc.addImage(
   qr,
   "PNG",
-  87,
-  finalY + 36,
-  35,
-  35
+  90,
+  finalY + 34,
+  30,
+  30
 );
 
 doc.setFontSize(10);
@@ -211,7 +211,7 @@ doc.setFontSize(10);
 doc.text(
   "Scan QR Code untuk langsung mengirim hasil perhitungan ke WhatsApp.",
   105,
-  finalY + 75,
+  finalY + 68,
   {
     align: "center",
   }
@@ -227,7 +227,7 @@ doc.text(
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
   105,
-  finalY + 83,
+  finalY + 75,
   {
     align: "center",
   }
@@ -249,7 +249,7 @@ for (let i = 1; i <= totalPages; i++) {
   doc.text(
     `Halaman ${i} / ${totalPages}`,
     195,
-    287,
+    283,
     {
       align: "right",
     }
