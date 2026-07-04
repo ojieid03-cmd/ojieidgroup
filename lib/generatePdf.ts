@@ -60,7 +60,7 @@ doc.text(
 // Kembalikan warna teks
 doc.setTextColor(0, 0, 0);
   // Header Hijau
-doc.setFillColor(0, 128, 55);
+doc.setFillColor(0, 153, 255);
 doc.rect(0, 0, 210, 28, "F");
 
 // Judul
@@ -106,7 +106,7 @@ doc.text(
   theme: "grid",
 
   headStyles: {
-    fillColor: [0, 128, 55],
+    fillColor: [0, 153, 255],
     textColor: 255,
     halign: "center",
   },
@@ -152,7 +152,7 @@ doc.text(
   const finalY = (doc as any).lastAutoTable.finalY;
 
 // Garis pembatas
-doc.setDrawColor(0, 128, 55);
+doc.setDrawColor(0, 153, 255);
 
 doc.line(
   20,
@@ -197,14 +197,13 @@ doc.text(
   }
 );
 
-// QR Code
 doc.addImage(
   qr,
   "PNG",
-  80,
-  finalY + 45,
-  50,
-  50
+  87,
+  finalY + 36,
+  35,
+  35
 );
 
 doc.setFontSize(10);
@@ -212,7 +211,7 @@ doc.setFontSize(10);
 doc.text(
   "Scan QR Code untuk langsung mengirim hasil perhitungan ke WhatsApp.",
   105,
-  finalY + 101,
+  finalY + 75,
   {
     align: "center",
   }
@@ -228,7 +227,7 @@ doc.text(
     "Survey lapangan diperlukan sebelum proses produksi dan instalasi."
   ],
   105,
-  finalY + 110,
+  finalY + 83,
   {
     align: "center",
   }
@@ -250,7 +249,7 @@ for (let i = 1; i <= totalPages; i++) {
   doc.text(
     `Halaman ${i} / ${totalPages}`,
     195,
-    290,
+    287,
     {
       align: "right",
     }
