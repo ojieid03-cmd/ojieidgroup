@@ -8,7 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import DarkModeToggle from "@/components/DarkModeToggle";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import Link from "next/link";
-
+import Testimonial from "@/components/home/Testimonial";
 export default function Home() {
   return (
     <main className="bg-gray-100 transition-colors dark:bg-gray-900 dark:text-white">
@@ -38,7 +38,7 @@ export default function Home() {
       <section className="bg-white py-20 dark:bg-gray-800">
         <MapLocation />
       </section>
-
+<Testimonial />
       {/* CONTACT */}
       <section className="py-20 dark:bg-gray-900">
         <ContactForm />
