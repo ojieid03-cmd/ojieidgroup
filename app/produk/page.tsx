@@ -1,51 +1,50 @@
+import Image from "next/image";
 import Link from "next/link";
-
 export default function ProdukPage() {
   const produk = [
-    {
-      nama: "Videotron Indoor",
-      deskripsi:
-        "Display LED berkualitas tinggi untuk ruang indoor seperti ruang meeting, ballroom, mall, showroom dan tempat ibadah.",
-      icon: "📺",
-      href: "/produk/videotron-indoor",
-    },
-    {
-      nama: "Videotron Outdoor",
-      deskripsi:
-        "LED Display tahan cuaca dengan tingkat kecerahan tinggi untuk billboard, event, stadion dan area outdoor.",
-      icon: "🌞",
-      href: "/produk/videotron-outdoor",
-    },
-    {
-      nama: "Running Text",
-      deskripsi:
-        "Display LED Running Text untuk masjid, toko, sekolah, instansi dan berbagai kebutuhan informasi.",
-      icon: "📝",
-      href: "/produk/running-text",
-    },
-    {
-      nama: "Digital Signage",
-      deskripsi:
-        "Media promosi digital modern untuk perusahaan, hotel, rumah sakit dan pusat perbelanjaan.",
-      icon: "🖥️",
-      href: "/produk/digital-signage",
-    },
-    {
-      nama: "WiFi Internet",
-      deskripsi:
-        "Instalasi jaringan internet profesional untuk rumah, kantor maupun perusahaan.",
-      icon: "📡",
-      href: "/services",
-    },
-    {
-      nama: "Maintenance",
-      deskripsi:
-        "Perawatan, troubleshooting dan perbaikan Videotron oleh teknisi berpengalaman.",
-      icon: "🛠️",
-      href: "/services",
-    },
-  ];
-
+  {
+    nama: "Videotron Indoor",
+    deskripsi:
+      "Display LED berkualitas tinggi untuk ruang indoor seperti meeting room, ballroom, showroom, mall, hotel dan tempat ibadah.",
+    image: "/images/products/indoor.webp",
+    href: "/produk/videotron-indoor",
+  },
+  {
+    nama: "Videotron Outdoor",
+    deskripsi:
+      "Videotron Outdoor tahan hujan dan panas dengan brightness tinggi untuk billboard, event dan stadion.",
+    image: "/images/products/outdoor.webp",
+    href: "/produk/videotron-outdoor",
+  },
+  {
+    nama: "Running Text",
+    deskripsi:
+      "LED Running Text untuk masjid, sekolah, toko, instansi pemerintahan hingga pusat perbelanjaan.",
+    image: "/images/products/running.webp",
+    href: "/produk/running-text",
+  },
+  {
+    nama: "Digital Signage",
+    deskripsi:
+      "Media promosi digital modern untuk hotel, rumah sakit, kantor dan pusat perbelanjaan.",
+    image: "/images/products/signage.webp",
+    href: "/produk/digital-signage",
+  },
+  {
+    nama: "WiFi Internet",
+    deskripsi:
+      "Instalasi jaringan internet profesional untuk rumah, kantor, sekolah dan perusahaan.",
+    image: "/images/products/wifi.webp",
+    href: "/services/wifi",
+  },
+  {
+    nama: "Maintenance",
+    deskripsi:
+      "Perawatan, troubleshooting dan perbaikan Videotron oleh teknisi profesional.",
+    image: "/images/products/maintenance.webp",
+    href: "/services/maintenance",
+  },
+];
   return (
     <main className="min-h-screen bg-gray-100 py-16 dark:bg-gray-900">
       <div className="mx-auto max-w-7xl px-6">
@@ -80,26 +79,32 @@ export default function ProdukPage() {
               key={item.nama}
               href={item.href}
               className="
-                group
-                overflow-hidden
-                rounded-2xl
-                bg-white
-                shadow-lg
-                transition-all
-                duration-300
-                hover:-translate-y-3
-                hover:shadow-2xl
-                dark:bg-gray-800
-              "
+group
+overflow-hidden
+rounded-3xl
+bg-[#1d2738]
+shadow-xl
+border
+border-slate-700
+transition-all
+duration-300
+hover:-translate-y-2
+hover:border-green-500
+"
             >
 
               {/* Icon */}
 
-              <div className="flex h-52 items-center justify-center bg-gradient-to-br from-green-100 to-green-50 text-7xl transition duration-300 group-hover:scale-105">
+              <div className="relative h-48 overflow-hidden">
 
-                {item.icon}
+  <Image
+    src={item.image}
+    alt={item.nama}
+    fill
+    className="object-cover transition duration-500 group-hover:scale-110"
+  />
 
-              </div>
+</div>
 
               {/* Content */}
 
@@ -112,24 +117,37 @@ export default function ProdukPage() {
                 <p className="mt-4 leading-7 text-gray-600 dark:text-gray-300">
                   {item.deskripsi}
                 </p>
+<ul className="mt-5 space-y-2 text-sm text-gray-300">
 
+  <li>✅ Produk Original</li>
+
+  <li>✅ Instalasi Profesional</li>
+
+  <li>✅ Garansi Resmi</li>
+
+  <li>✅ Support Teknisi</li>
+
+</ul>
                 <div className="mt-8">
 
                   <span
-                    className="
-                      block
-                      rounded-xl
-                      bg-green-700
-                      py-3
-                      text-center
-                      font-bold
-                      text-white
-                      transition
-                      group-hover:bg-green-800
-                    "
-                  >
-                    Lihat Detail →
-                  </span>
+className="
+mt-7
+block
+rounded-xl
+border
+border-green-500
+py-3
+text-center
+font-bold
+text-green-400
+transition
+group-hover:bg-green-600
+group-hover:text-white
+"
+>
+Lihat Detail →
+</span>
 
                 </div>
 
