@@ -3,6 +3,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { news } from "@/lib/news";
 
+export function generateStaticParams() {
+  return news.map((item) => ({
+    slug: item.slug,
+  }));
+}
+
 type Props = {
   params: Promise<{
     slug: string;
@@ -18,7 +24,6 @@ export default async function NewsDetail({ params }: Props) {
 
   return (
     <main className="min-h-screen bg-gray-100 py-16 dark:bg-gray-900">
-
       <div className="mx-auto max-w-5xl px-6">
 
         <Link
@@ -31,14 +36,12 @@ export default async function NewsDetail({ params }: Props) {
         <div className="mt-8 overflow-hidden rounded-3xl bg-white shadow-xl dark:bg-gray-800">
 
           <div className="relative h-[420px]">
-
             <Image
               src={article.image}
               alt={article.title}
               fill
               className="object-cover"
             />
-
           </div>
 
           <div className="p-10">
@@ -52,78 +55,78 @@ export default async function NewsDetail({ params }: Props) {
             </h1>
 
             <div className="mt-10 space-y-6 text-lg leading-9 text-gray-700 dark:text-gray-300">
-
               {article.content
                 .trim()
                 .split("\n")
                 .map((text, index) => (
                   <p key={index}>{text}</p>
                 ))}
+            </div>
+
+            {/* PROJECT INFO */}
+
+            <div className="mt-12 rounded-2xl bg-green-50 p-8">
+
+              <h2 className="text-2xl font-bold text-green-700">
+                Project Information
+              </h2>
+
+              <div className="mt-6 grid gap-6 md:grid-cols-2">
+
+                <div>
+                  <p className="font-bold">📍 Lokasi</p>
+                  <p>{article.location}</p>
+                </div>
+
+                <div>
+                  <p className="font-bold">📺 Kategori</p>
+                  <p>{article.category}</p>
+                </div>
+
+                <div>
+                  <p className="font-bold">⏱ Durasi</p>
+                  <p>{article.duration}</p>
+                </div>
+
+                <div>
+                  <p className="font-bold">👷 Tim</p>
+                  <p>{article.team}</p>
+                </div>
+
+              </div>
 
             </div>
-{/* PROJECT INFO */}
 
-<div className="mt-12 rounded-2xl bg-green-50 p-8">
+            {/* GALLERY */}
 
-<h2 className="text-2xl font-bold text-green-700">
-Project Information
-</h2>
+            <h2 className="mt-16 text-3xl font-bold text-green-700">
+              Galeri Project
+            </h2>
 
-<div className="mt-6 grid gap-6 md:grid-cols-2">
+            <div className="mt-8 grid gap-5 md:grid-cols-2">
 
-<div>
-<p className="font-bold">📍 Lokasi</p>
-<p>{article.location}</p>
-</div>
+              {article.gallery.map((img) => (
 
-<div>
-<p className="font-bold">📺 Kategori</p>
-<p>{article.category}</p>
-</div>
+                <div
+                  key={img}
+                  className="relative h-72 overflow-hidden rounded-2xl"
+                >
 
-<div>
-<p className="font-bold">⏱ Durasi</p>
-<p>{article.duration}</p>
-</div>
+                  <Image
+                    src={img}
+                    alt={article.title}
+                    fill
+                    className="object-cover transition duration-300 hover:scale-110"
+                  />
 
-<div>
-<p className="font-bold">👷 Tim</p>
-<p>{article.team}</p>
-</div>
+                </div>
 
-</div>
+              ))}
 
-</div>
+            </div>
 
-{/* GALLERY */}
+            {/* CTA */}
 
-<h2 className="mt-16 text-3xl font-bold text-green-700">
-
-Galeri Project
-
-</h2>
-
-<div className="mt-8 grid gap-5 md:grid-cols-2">
-
-{article.gallery.map((img) => (
-
-<div
-key={img}
-className="relative h-72 overflow-hidden rounded-2xl"
->
-
-<Image
-src={img}
-alt=""
-fill
-className="object-cover transition duration-300 hover:scale-110"
-/>
-
-</div>
-
-))}
-
-</div>
             <div className="mt-12 rounded-2xl bg-green-50 p-8">
 
               <h3 className="text-2xl font-bold text-green-700">
@@ -152,7 +155,6 @@ className="object-cover transition duration-300 hover:scale-110"
         </div>
 
       </div>
-
     </main>
   );
 }
