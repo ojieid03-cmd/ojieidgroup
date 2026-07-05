@@ -3,6 +3,10 @@ import {
   Tv,
   PanelTop,
   RadioTower,
+  Wrench,
+  ShieldCheck,
+  Network,
+  Headphones,
 } from "lucide-react";
 
 export const mainMenu = [
@@ -39,14 +43,19 @@ export const mainMenu = [
 
 export const productMenu = [
   {
-    title: "Indoor LED Display",
+    title: "Videotron Indoor",
     href: "/produk/videotron-indoor",
     icon: MonitorSmartphone,
   },
   {
-    title: "Outdoor LED Display",
+    title: "Videotron Outdoor",
     href: "/produk/videotron-outdoor",
     icon: Tv,
+  },
+  {
+    title: "Running Text",
+    href: "/produk/running-text",
+    icon: RadioTower,
   },
   {
     title: "Digital Signage",
@@ -54,8 +63,23 @@ export const productMenu = [
     icon: PanelTop,
   },
   {
-    title: "Running Text",
-    href: "/produk/running-text",
-    icon: RadioTower,
+    title: "Installation",
+    href: "/produk/installation",
+    icon: Wrench,
+  },
+  {
+    title: "Maintenance",
+    href: "/produk/maintenance",
+    icon: ShieldCheck,
+  },
+  {
+    title: "Networking",
+    href: "/produk/networking",
+    icon: Network,
+  },
+  {
+    title: "WiFi Internet",
+    href: "/produk/wifi",
+    icon: Headphones,
   },
 ];

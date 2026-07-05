@@ -31,18 +31,32 @@ export default function ProdukPage() {
     href: "/produk/digital-signage",
   },
   {
+  nama: "Installation",
+  deskripsi:
+    "Jasa instalasi Videotron, Running Text, Digital Signage dan LED Display profesional oleh teknisi berpengalaman.",
+  image: "/images/products/installation.webp",
+  href: "/produk/installation",
+},
+  {
     nama: "WiFi Internet",
     deskripsi:
       "Instalasi jaringan internet profesional untuk rumah, kantor, sekolah dan perusahaan.",
     image: "/images/products/wifi.webp",
-    href: "/services/wifi",
+    href: "/produk/wifi",
   },
+  {
+  nama: "Networking",
+  deskripsi:
+    "Solusi networking profesional meliputi konfigurasi LAN, Fiber Optic, Mikrotik, Router, Switch, Access Point dan integrasi jaringan perusahaan.",
+  image: "/images/products/networking.webp",
+  href: "/produk/networking",
+},
   {
     nama: "Maintenance",
     deskripsi:
       "Perawatan, troubleshooting dan perbaikan Videotron oleh teknisi profesional.",
     image: "/images/products/maintenance.webp",
-    href: "/services/maintenance",
+    href: "/produk/maintenance",
   },
 ];
   return (
