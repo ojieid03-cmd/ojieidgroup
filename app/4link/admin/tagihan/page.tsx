@@ -41,7 +41,7 @@ export default async function TagihanPage() {
           </thead>
 
           <tbody>
-            {invoices.map((invoice) => (
+            {invoices.map((invoice: any) => (
               <tr key={invoice.id} className="border-t">
                 <td className="p-4">{invoice.customer.fullName}</td>
 

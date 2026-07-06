@@ -68,13 +68,12 @@ export default async function DashboardPage() {
   ];
 
   const chartLabels = monthlyRevenue.map(
-    (item) => monthNames[item.month - 1]
-  );
+  (item: any) => monthNames[item.month - 1]
+);
 
-  const chartData = monthlyRevenue.map(
-    (item) => Number(item._sum.amount ?? 0)
-  );
-
+const chartData = monthlyRevenue.map(
+  (item: any) => Number(item._sum.amount ?? 0)
+);
   return (
     <DashboardLayout>
       <h1 className="text-3xl font-bold mb-8">

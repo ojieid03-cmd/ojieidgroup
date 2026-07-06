@@ -74,7 +74,7 @@ export default async function TambahPelangganPage() {
         >
           <option value="">Pilih Paket</option>
 
-          {packages.map((pkg) => (
+          {packages.map((pkg: any) => (
             <option key={pkg.id} value={pkg.id}>
               {pkg.name} - {pkg.speed} Mbps
             </option>

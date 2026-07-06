@@ -48,7 +48,7 @@ export default async function PembayaranPage() {
           </thead>
 
           <tbody>
-            {invoices.map((invoice) => (
+            {invoices.map((invoice: any) => (
               <tr key={invoice.id} className="border-t">
 
                 <td className="p-4">

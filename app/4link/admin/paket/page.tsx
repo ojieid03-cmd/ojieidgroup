@@ -36,7 +36,7 @@ export default async function PaketPage() {
           </thead>
 
           <tbody>
-            {packages.map((pkg) => (
+            {packages.map((pkg: any) => (
               <tr key={pkg.id} className="border-t">
                 <td className="p-4">{pkg.name}</td>
                 <td className="p-4">{pkg.speed} Mbps</td>

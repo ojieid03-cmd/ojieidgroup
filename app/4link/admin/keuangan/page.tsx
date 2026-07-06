@@ -140,7 +140,7 @@ export default async function KeuanganPage() {
           </thead>
 
           <tbody>
-            {latestPayments.map((item) => (
+            {latestPayments.map((item: any) => (
               <tr key={item.id} className="border-t">
                 <td className="p-4">
                   {item.paidAt

@@ -39,7 +39,7 @@ export default async function PelangganPage() {
           </thead>
 
           <tbody>
-            {customers.map((customer) => (
+            {customers.map((customer: any) => (
               <tr key={customer.id} className="border-t">
                 <td className="p-4">{customer.fullName}</td>
                 <td className="p-4">{customer.phone}</td>
