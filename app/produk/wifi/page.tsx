@@ -301,26 +301,32 @@ export default function WifiPage() {
 
           </p>
 
-          <div className="mt-10 flex flex-wrap justify-center gap-5">
+         <div className="mt-10 flex flex-wrap justify-center gap-6">
 
-            <a
-              href="https://wa.me/6285231353155"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-xl bg-white px-8 py-4 font-bold text-green-700 transition hover:scale-105"
-            >
-              💬 Chat WhatsApp
-            </a>
+  <Link
+    href="https://wa.me/628xxxxxxxxxx"
+    target="_blank"
+    className="bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-xl font-semibold transition"
+  >
+    💬 Chat WhatsApp
+  </Link>
 
-            <Link
-              href="/kontak"
-              className="rounded-xl border border-white px-8 py-4 font-bold transition hover:bg-white hover:text-green-700"
-            >
-              Hubungi Kami
-            </Link>
+  <Link
+    href="/kontak"
+    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition"
+  >
+    Hubungi Kami
+  </Link>
 
-          </div>
+  
+  <Link
+    href="/4link/login"
+    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition"
+  >
+    Login Admin 4LINK
+  </Link>
 
+</div>
         </div>
 
       </section>

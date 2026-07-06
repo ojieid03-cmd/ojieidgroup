@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Package {
+  id          String   @id @default(cuid())
+  name        String
+  speed       Int
+  price       Decimal  @db.Decimal(10,2)
+  description String?
+  isActive    Boolean  @default(true)
+
+  customers   Customer[]
+
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Customer {
+  id            String   @id @default(cuid())
+
+  fullName      String
+  phone         String   @unique
+  email         String?
+  address       String
+
+  packageId     String
+  package       Package  @relation(fields: [packageId], references: [id])
+
+  dueDate       Int
+
+  status        String   @default("ACTIVE")
+
+  mikrotikUser  String?
+  mikrotikPass  String?
+
+  notes         String?
+
+  invoices      Invoice[]
+
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+}
+
+model Invoice {
+  id          String   @id @default(cuid())
+
+  customerId  String
+  customer    Customer @relation(fields: [customerId], references: [id])
+
+  month       Int
+  year        Int
+
+  amount      Decimal  @db.Decimal(10,2)
+
+  status      String   @default("UNPAID")
+
+  paidAt      DateTime?
+
+  createdAt   DateTime @default(now())
+}
+model Admin {
+  id        String @id @default(cuid())
+  username  String @unique
+  password  String
+  fullName  String
+  createdAt DateTime @default(now())
+}
