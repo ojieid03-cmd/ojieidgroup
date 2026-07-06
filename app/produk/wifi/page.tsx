@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ADMIN_LOGIN_URL } from "@/lib/config";
 
 const team = [
   {
@@ -301,29 +302,30 @@ export default function WifiPage() {
 
           </p>
 
-         <div className="mt-10 flex flex-wrap justify-center gap-6">
+        <div className="mt-10 flex flex-wrap justify-center gap-4">
 
   <Link
     href="https://wa.me/628xxxxxxxxxx"
     target="_blank"
-    className="bg-white text-green-700 hover:bg-green-50 px-8 py-4 rounded-xl font-semibold transition"
+    className="inline-flex min-w-[220px] items-center justify-center rounded-xl bg-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-orange-500"
   >
     💬 Chat WhatsApp
   </Link>
 
   <Link
     href="/kontak"
-    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition"
+    className="inline-flex min-w-[220px] items-center justify-center rounded-xl bg-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-orange-500"
   >
-    Hubungi Kami
+    📞 Hubungi Kami
   </Link>
 
-  
   <Link
-    href="/4link/login"
-    className="bg-green-600 hover:bg-green-700 text-white px-8 py-4 rounded-xl font-semibold transition"
+    href={ADMIN_LOGIN_URL}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="inline-flex min-w-[220px] items-center justify-center rounded-xl bg-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-orange-500"
   >
-    Login Admin 4LINK
+    🔐 Login Admin 4LINK
   </Link>
 
 </div>
