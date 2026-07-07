@@ -8,5 +8,5 @@ export async function logoutAction() {
 
   cookieStore.delete("admin_session");
 
-  redirect("/4link/login");
+  redirect("/produk/wifi/4link/login");
 }

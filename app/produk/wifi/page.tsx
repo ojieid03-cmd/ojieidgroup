@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ADMIN_LOGIN_URL } from "@/lib/config";
 
 const team = [
   {
@@ -320,13 +319,11 @@ export default function WifiPage() {
   </Link>
 
   <Link
-    href={ADMIN_LOGIN_URL}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex min-w-[220px] items-center justify-center rounded-xl bg-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-orange-500"
-  >
-    🔐 Login Admin 4LINK
-  </Link>
+  href="/produk/wifi/4link/login"
+  className="inline-flex min-w-[220px] items-center justify-center rounded-xl bg-green-600 px-8 py-4 font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:bg-orange-500"
+>
+  🔐 Login Admin 4LINK
+</Link>
 
 </div>
         </div>

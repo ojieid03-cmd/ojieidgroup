@@ -4,14 +4,14 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const menus = [
-  { name: "Dashboard", href: "/4link/admin/dashboard" },
-  { name: "Pelanggan", href: "/4link/admin/pelanggan" },
-  { name: "Paket Internet", href: "/4link/admin/paket" },
-  { name: "Tagihan", href: "/4link/admin/tagihan" },
-  { name: "Pembayaran", href: "/4link/admin/pembayaran" },
-  { name: "Keuangan", href: "/4link/admin/keuangan" },
-  { name: "MikroTik", href: "/4link/admin/mikrotik" },
-  { name: "Pengaturan", href: "/4link/admin/pengaturan" },
+  { name: "Dashboard", href: "/produk/wifi/4link/admin/dashboard" },
+  { name: "Pelanggan", href: "/produk/wifi/4link/admin/pelanggan" },
+  { name: "Paket Internet", href: "/produk/wifi/4link/admin/paket" },
+  { name: "Tagihan", href: "/produk/wifi/4link/admin/tagihan" },
+  { name: "Pembayaran", href: "/produk/wifi/4link/admin/pembayaran" },
+  { name: "Keuangan", href: "/produk/wifi/4link/admin/keuangan" },
+  { name: "MikroTik", href: "/produk/wifi/4link/admin/mikrotik" },
+  { name: "Pengaturan", href: "/produk/wifi/4link/admin/pengaturan" },
 ];
 
 export default function Sidebar() {
@@ -47,7 +47,7 @@ export default function Sidebar() {
 
       <div className="p-4 border-t border-slate-700">
         <Link
-          href="/4link/logout"
+          href="/produk/wifi/4link/logout"
           className="block w-full rounded-lg bg-red-600 hover:bg-red-700 px-4 py-3 text-center transition"
         >
           Logout
