@@ -106,14 +106,14 @@ export default function PelangganPage() {
                   <div className="flex justify-center gap-2">
 
                     <Link
-                      href={`/produk/wifi/4link/admin/pelanggan/edit/${customer.id}`}
+                      href="/produk/wifi/4link/admin/pelanggan/edit"
                       className="bg-blue-600 hover:bg-blue-700 text-white px-3 py-1 rounded transition"
                     >
                       Edit
                     </Link>
 
                     <Link
-                      href={`/produk/wifi/4link/admin/pelanggan/hapus/${customer.id}`}
+                      href="/produk/wifi/4link/admin/pelanggan/hapus"
                       className="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded transition"
                     >
                       Hapus
